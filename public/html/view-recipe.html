@@ -18,28 +18,13 @@
         <h1>
             <a href="/">Butler Bites</a>
             </h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="./breakfast.html">Breakfast</a>
-                    </li>
-                    <li>
-                        <a href="./lunch.html">Lunch</a>
-                    </li>
-                    <li>
-                        <a href="./dinner.html">Dinner</a>
-                    </li>
-                    <li>
-                        <a href="./dessert.html">Dessert</a>
-                    </li>
-                </ul>
-            </nav>
+            <a id="backButton" href="./your-recipe.html">Back</a>
     </header>
     <main>
         <!-- Recipe info banner -->
         <section>
             <h5 id="dateTime" class="dateTime">Date</h5>
-                        <h5 id="userName" class="user-name">Username</h5>
+                        <h3 id="userName" class="user-name">Username</h3>
                         <h1 id="foodTitle" class="food-title">Title of Food</h1>
                         <div id="starRating" class="star-rating"></div>
         </section>
@@ -54,16 +39,45 @@
             <!-- Time-->
             <div>
                 <ul>
-                    <li>Prep</li>
-                    <li>Cook</li>
-                    <li>Total</li>
-                    <li>Yield</li>
+                    <li>Prep: <span id="prep"></span> min</li>
+                    <li>Cook: <span id="cook"></span> min</li>
+                    <li>Total: <span id="total"></span> min</li>
+                    <li>Yield: <span id="yield"></span> servings</li>
                 </ul>
             </div>
             <!-- Ingredients -->
-            <div></div>
+            <div>
+                <h2>Ingredients</h2>
+                <ul>
+                    <li id="ingredientList"></li>
+                </ul>
+            </div>
             <!-- Directions -->
-            <div></div>
+            <div>
+                <h2>Directions</h2>
+                <p></p>
+            </div>
+        </section>
+
+        <!-- Comments -->
+        <section>
+            <!-- Existing comments -->
+            <div>
+                <h2>Comments</h2>
+                <ul>
+                    <li id="singleComment" class="single-comment">
+                        <h5 id="dateTime" class="dateTime">Date</h5>
+                        <h5 id="userName" class="user-name">Username</h5>
+                        <h1 id="commentBody" class="comment-body">Body Text of Comment</h1>
+                    </li>
+                </ul>
+            </div>
+            <!-- Add Comment -->
+            <div>
+                <h2>Add a Comment:</h2>
+                <textarea name="new-comment" id="newComment" cols="30" rows="10"></textarea>
+                <button class="comment-button" type="button">Post</button>
+            </div>
         </section>
     </main>
     
