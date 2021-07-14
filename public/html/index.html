@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler Bites</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/css/style.css"/>
 </head>
 <body>
     <header>
-        <div>
-            <div class="search-bar"></div>
+        <div class="top-bar">
+            <div class="search-bar"><span class="ico ico-mglass"></span></div>
             <div class="user-corner">
-                <div class="post-button"></div>
-                <div class="icon"></div>
+                <div class="post-button"><a href="./recipe-form.html" >Post+</a></div>
+                <div class="icon"><span id="circle"></span> <span id="triangle"></span></div>
             </div>
         </div>
         <h1>
-            <a href="/">Butler Bites</a>
+            <a href="./index.html">Butler Bites</a>
             </h1>
             <nav>
                 <ul>
@@ -35,19 +36,39 @@
                 </ul>
             </nav>
     </header>
-    <main>
+    <main class="index">
         <!-- Hero image of pizza -->
-        <section id="pizzaHero" class="hero">
-                <img src="" alt="Pizza">
+        <section id="pizzaHero" class="hero" class="img-fluid">
+                <img src="../stylesheets/css/images/pizza.jpg" alt="Pizza">
         </section>
 
         <!-- Body text and login banner -->
-        <section>
-            <p></p>
+        <section class="body">
+            <p>Explore hand selected recipes provided 
+                by our robust Butler community. 
+                Whether you’re a beginner or a five-star chef, 
+                there will always be great recipes available 
+                to try out! There might even be something 
+                you want to share with the community!  </p>
             <!-- Login redirect: -->
-            <div id= "loginBanner"></div>
+            <div id= "loginBanner">
+                <h2 href="./login.html">Login 
+                    or Join Us Today!</h2>
+            </div>
         </section>
     </main>
+
+    <!--Links to jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Link to Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    
+    <!--Links to external script.js-->
+    <script src=""></script>
+    <!--Links to external  script-->
+    <script src="assets/js/quote.js"></script>
+    
     
 </body>
 </html>
