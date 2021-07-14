@@ -17,7 +17,7 @@ Rating.init(
             validate: {
                 //custom validator function to ensure score is between 1 and 5 inclusive
                 isValidScore(value){
-                    if(parseInt(value) <1 || parseInt(value) >5){
+                    if(parseInt(value) < 1 || parseInt(value) > 5){
                         throw new Error('Only a rating score between 1 and 5 is allowed.');
                     }
                 }

@@ -7,7 +7,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Recipe extends Model {
-    static upvote(body, models){
+    static rate(body, models){
         return models.Rating.create({
             user_id: body.user_id,
             recipe_id: body.recipe_id
