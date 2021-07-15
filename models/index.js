@@ -2,6 +2,7 @@ const User = require('./User');
 const Recipe = require('./Recipe');
 const Rating = require('./Rating');
 const Comment = require('./Comment');
+const Category = require('./Category');
 
 //create assoications between tables
 //A user can post many recipes
@@ -60,4 +61,8 @@ Recipe.hasMany(Comment, {
     foreignKey: 'recipe_id'
 });
 
-module.exports = { User, Recipe, Rating, Comment };
+Category.hasMany(Recipe, {
+    foreignKey: 'recipe_id'
+});
+
+module.exports = { User, Recipe, Rating, Comment, Category };
