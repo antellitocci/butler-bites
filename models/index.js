@@ -62,7 +62,11 @@ Recipe.hasMany(Comment, {
 });
 
 Category.hasMany(Recipe, {
-    foreignKey: 'recipe_id'
+    foreignKey: 'category_id'
+});
+
+Recipe.belongsTo(Category, {
+    foreignKey: 'category_id'
 });
 
 module.exports = { User, Recipe, Rating, Comment, Category };

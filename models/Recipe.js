@@ -38,12 +38,12 @@ Recipe.init(
             autoIncrement: true
         },
         title: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: [
+            validate: {
                 //title must be at least 5 characters long
-                len[5]
-            ]
+                len: [5]
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
