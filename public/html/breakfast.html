@@ -20,7 +20,7 @@
             </h1>
             <nav>
                 <ul>
-                    <li>
+                    <li id="breakfastSelect">
                         <a href="./breakfast.html">Breakfast</a>
                     </li>
                     <li>
@@ -37,24 +37,24 @@
     </header>
     <main>
         <!-- Hero image of waffles -->
-        <section id="waffleHero" class="hero">
-                <img src="" alt="Waffle">
+        <section class="hero">
+                <img class="hero-img" id="waffleHero" src="../stylesheets/css/images/waffles.jpg" alt="Waffles">
         </section>
 
         <!-- Body text and lists of recipes -->
-        <section>
-            <p></p>
+        <section class="body meal">
+            <p>Break the fast with any Butler breakfast recipe! </p>
             <!-- Recipes: -->
-            <div id= "recipeBreakfast">
+            <div id= "recipeBreakfast" class="recipe-border">
                 <!-- Can change this id around if you want -->
-                <ul class="recipe">
-                    <li>
+                        <div class="user-date">
                         <h5 id="dateTime" class="dateTime">Date</h5>
-                        <h5 id="userName" class="user-name">Username</h5>
-                        <h1 id="foodTitle" class="food-title">Title of Food</h1>
+                        <h5 id="userName" class="user-name"><a href="./your-recipe.html" >Username</a></h5>
+                        </div>
+                        <div class="recipe-title">
+                            <h1 id="foodTitle" class="food-title"><a href="./view-recipe.html" >Title of Food</a></h1>
                         <div id="starRating" class="star-rating"></div>
-                    </li>
-                </ul>
+                        </div>
             </div>
         </section>
     </main>

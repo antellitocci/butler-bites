@@ -2,6 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* border: solid red 4px; */
+  color: #3b3939;
+  text-decoration: none;
 }
 
 /* Colors */
@@ -10,6 +13,9 @@
   --login-or-signup-box: #efaf62;
   --black: #3b3939;
   --breakfast-selection: #930013;
+  --lunch-selection: #023f72;
+  --dinner-selection: #bc8b0a;
+  --dessert-selection: #c2454c;
   --your-recipes: #6a1f62;
   --edit-button: #d65500;
   --gray-filling: #f2f2f2;
@@ -38,15 +44,47 @@
 }
 
 /* Search bar */
-.search-bar {
+form.example input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  font-family: LeHavre;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #95aabf;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #f78f20;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* .search-bar {
   height: 40px;
   width: 180px;
   border: thin solid black;
-}
+} */
 /* Magnifying glass icon */
 @import "compass/css3";
 
-.ico-mglass {
+/* .ico-mglass {
   position: relative;
   display: inline-block;
   background: #fff;
@@ -68,7 +106,7 @@
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
   }
-}
+} */
 /* End of Search Bar */
 
 /* Post and Login */
@@ -114,8 +152,6 @@ header {
   padding: 15px 45px;
   font-family: JohnDoe;
   background-color: white;
-  /* display: flex;
-  justify-content: space-between; */
   text-decoration: none;
   flex-wrap: wrap;
   position: sticky;
@@ -128,18 +164,12 @@ header h1 a {
   display: flex;
   justify-content: center;
   font-size: 60px;
-
-  text-decoration: none;
-  color: var(--black);
-  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  padding-bottom: 20px;
 }
+
 /* End of Title */
 
 /* Navigation */
-header a {
-  text-decoration: none;
-  color: var(--black);
-}
 
 header nav ul {
   /* margin: 7px 0; */
@@ -147,35 +177,42 @@ header nav ul {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  text-decoration: none;
   list-style: none;
 }
 
 header nav ul li a {
   padding: 10px 45px;
   font-size: 2vw;
-  text-decoration: none;
-  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }
 
 header nav ul li a:hover {
+  color: var(--lunch-selection);
+}
+
+#breakfastSelect a {
   color: var(--breakfast-selection);
+}
+#lunchSelect a {
+  color: var(--lunch-selection);
 }
 
 /* Header and Navigation End */
-/* .index {
-  height: 50%;
-} */
+
 /* Hero Img */
-#pizzaHero {
-  transform: rotate(90deg);
-  width: 1800px;
-  height: 700px;
-  object-fit: cover;
-  /* object-position: 0 40%; */
+.hero {
+  height: 920px;
 }
+
+.hero-img {
+  height: 500px;
+  width: 1360px;
+  margin-left: 40px;
+  object-fit: cover;
+}
+
 /* End of Hero */
 
+/* Body Text */
 .body {
   margin-top: -250px;
 }
@@ -189,6 +226,49 @@ header nav ul li a:hover {
 .body div {
   display: flex;
   justify-content: center;
+}
+
+.meal p {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+/* End of Body Text*/
+
+/* Recipe List */
+.recipe-border {
+  padding: 20px 0px 60px 0px;
+
+  border: solid var(--black) 3px;
+}
+.user-date {
+  position: absolute;
+  margin-left: -900px;
+}
+.user-date h5 {
+  font-family: LeHarve;
+  font-size: 40px;
+  margin-left: -120px;
+  padding-top: 40px;
+  text-decoration: none;
+}
+
+#dateTime {
+  margin-top: -40px;
+}
+
+.recipe-title {
+  display: block;
+  font-family: JohnDoe;
+  font-size: 32px;
+}
+
+.star-rating {
+  position: absolute;
+  height: 60px;
+  width: 280px;
+  margin-top: 50px;
+  border: solid red 3px;
 }
 
 #loginBanner h2 {
