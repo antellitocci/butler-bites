@@ -21,7 +21,7 @@ class Recipe extends Model {
                     'id',
                     'title',
                     'created at',
-                    [sequelize.literal('(SELECT AVG(*) FROM rating WHERE recipe_id = rating.recipe_id'), 'average_rating']
+                    [sequelize.literal('(SELECT AVG(*) FROM rating WHERE recipe_id = recipe.id'), 'average_rating']
                 ]
             });
         });
