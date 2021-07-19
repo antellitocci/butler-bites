@@ -1,0 +1,33 @@
+async function newFormHandler(event) {
+    event.preventDefault();
+  
+    const title = document.querySelector('input[name="title"]').value;
+    const prep_time = document.querySelector('input[name="prepTime"]').value;
+    const cook_time = document.querySelector('input[name="cookTime"]').value;
+    const serving_size = document.querySelector('input[name="servingSize"]').value;
+    const ingredients = document.querySelector('input[name="ingredients"]').value;
+    const directions = document.querySelector('input[name="directions"]').value;
+  
+    const response = await fetch(`/api/posts`, {
+      method: 'POST',
+      body: JSON.stringify({
+        title,
+        prep_time,
+        cook_time,
+        serving_size,
+        ingredients,
+        directions
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert(response.statusText);
+    }
+  }
+  
+  document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
