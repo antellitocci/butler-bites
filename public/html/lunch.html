@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler Bites</title>
-    <link rel="stylesheet" href="../styling/css/style.css"/>
+    <link rel="stylesheet" href="../stylesheets/css/style.css"/>
 </head>
 <body>
     <header>
-        <div>
-            <div class="search-bar"></div>
+        <div class="top-bar">
+            <div class="search-bar"><span class="ico ico-mglass"></span></div>
             <div class="user-corner">
-                <div class="post-button"></div>
-                <div class="icon"></div>
+                <div class="post-button"><a href="./recipe-form.html" >Post+</a></div>
+                <div class="icon"><span id="circle"></span> <span id="triangle"></span></div>
             </div>
         </div>
         <h1>
-            <a href="/">Butler Bites</a>
+            <a href="./index.html">Butler Bites</a>
             </h1>
             <nav>
                 <ul>
                     <li>
                         <a href="./breakfast.html">Breakfast</a>
                     </li>
-                    <li>
+                    <li id="lunchSelect">
                         <a href="./lunch.html">Lunch</a>
                     </li>
                     <li>
@@ -37,24 +37,24 @@
     </header>
     <main>
         <!-- Hero image of soup -->
-        <section id="soupHero" class="hero">
-                <img src="" alt="Soup">
+        <section  class="hero">
+                <img class="hero-img" id="soupHero" src="../stylesheets/css/images/soup.jpg" alt="Soup">
         </section>
 
         <!-- Body text and lists of recipes -->
-        <section>
-            <p></p>
+        <section class="body meal">
+            <p>Try any Butler lunch recipe for a midday pick-me-up! </p>
             <!-- Recipes: -->
-            <div id= "recipeLunch">
+            <div id= "recipeLunch" class="recipe-border">
                 <!-- Can change this id around if you want -->
-                <ul class="recipe">
-                    <li>
+                        <div class="user-date">
                         <h5 id="dateTime" class="dateTime">Date</h5>
-                        <h5 id="userName" class="user-name">Username</h5>
-                        <h1 id="foodTitle" class="food-title">Title of Food</h1>
+                        <h5 id="userName" class="user-name"><a href="./your-recipe.html" >Username</a></h5>
+                        </div>
+                        <div class="recipe-title">
+                            <h1 id="foodTitle" class="food-title"><a href="./view-recipe.html" >Title of Food</a></h1>
                         <div id="starRating" class="star-rating"></div>
-                    </li>
-                </ul>
+                        </div>
             </div>
         </section>
     </main>
