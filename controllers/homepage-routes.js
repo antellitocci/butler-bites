@@ -64,8 +64,8 @@ router.get('/category/:id', (req, res) => {
                 attributes: ['score']
             },
             {
-                model: Ingredient,
-                attributes: ['name', 'measurement']
+                model: Category,
+                attributes: ['name']
             }
         ]
     })
@@ -100,14 +100,10 @@ router.get('/recipe/:id', (req, res) => {
             'prep_time',
             'cook_time',
             'serving_size',
-            'ingredient_id',
+            'ingredients',
             'directions'
         ],
         include: [
-            {
-                model: Ingredient,
-                attributes: ['name', 'measurement']
-            },
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],

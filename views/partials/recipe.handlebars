@@ -1,0 +1,14 @@
+<article class="recipe">
+    <div class="title">
+        <a href="/recipe/{{recipe.id}}" class="recipeTitle">{{recipe.title}}</a>
+    </div>
+    <div class="times">
+        <span class="prepTime">Prep Time: {{recipe.prep_time}}</span>
+        <span class="cookTime">Cook Time: {{recipe.cook_time}}</span>
+    </div>
+    <div class="userCreate">
+        By {{user.username}} on {{format_date created_at}}
+        |
+        Rating: {{rating.score}}
+    </div>
+</article>
