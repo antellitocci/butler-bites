@@ -2,6 +2,10 @@
     {{ category }} Recipes
 </h2>
 
+<section class="hero img-fluid row">
+    <img class="hero-img" id="{{ category }}Hero" src="/stylesheets/css/images/{{ category }}.jpg" alt="{{ category }} image">
+</section>
+
 <div class="row justify-content-center mx-2">
     {{#if recipes.length}}
         {{#each recipes as |recipe|}}
