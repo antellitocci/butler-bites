@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/post/:id', (req, res) => {
+router.get('/recipe/:id', (req, res) => {
     Recipe.findOne({
         where: {
             id: req.params.id
