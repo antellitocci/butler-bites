@@ -299,17 +299,20 @@ header nav ul li a:hover {
 .form-input {
   background-color: var(--gray-filling);
   border: solid 3px var(--black);
-  font-size: 25px;
+  font-size: 35px;
   font-family: LeHavre;
+  text-align: center;
+  height: 55px;
+  width: 300px;
 }
 
 .split {
   display: flex;
-  margin: 40px 40px 40px 40px;
+  margin: 40px 40px 40px 400px;
 }
 
 .right {
-  margin: 40px 40px 40px 40px;
+  margin: 40px 40px 40px 400px;
 }
 
 .ingredients-form {
@@ -318,7 +321,17 @@ header nav ul li a:hover {
   margin-left: 200px;
 }
 
-#mealType {
+#ingredients {
+  margin-top: 20px;
+  width: 265px;
+  height: 250px;
+  text-align: center;
+}
+
+#directions {
+  width: 750px;
+  height: 300px;
+  text-align: center;
 }
 
 .prep {
@@ -326,18 +339,28 @@ header nav ul li a:hover {
   flex-direction: column;
 }
 
+.prep input {
+  width: 200px;
+}
+
 .info-prep {
   font-size: 25px;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 0px;
 }
 
 .new-recipe-button {
   font-family: JohnDoe;
-  font-size: 75px;
+  font-size: 65px;
   border: solid 5px var(--black);
   opacity: 0.75;
 }
 
 .new-recipe-button:hover {
   opacity: 1;
+}
+
+.space-between {
+  display: flex;
+  margin: 40px 0px 40px 113px;
+  justify-content: space-evenly;
 }

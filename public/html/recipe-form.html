@@ -38,9 +38,9 @@
             </div>
             
             <div class="right">
-                <label class="form-input" id="mealType" for="meal-type">Choose a meal type:</label>
+                <label class="form-heading" id="mealType" for="meal-type">Choose a meal type</label>
             <!-- Selection of what type of meal the user wants to categorize their recipe -->
-                <select class="button" name="categorize" id="categorize">
+                <select class="button form-input" name="categorize" id="categorize">
                     <option value="breakfast">Breakfast</option>
                     <option value="lunch">Lunch</option>
                     <option value="dinner">Dinner</option>
@@ -52,15 +52,15 @@
                 <div class="split">
                     <div class="prep">
                         <label class="info-prep" for="prepTime">Prep (min):</label>
-                <input type="number" placeholder="Prep (min):" id="prepTime" name="prepTime" class="form-input" />
+                <input type="number" placeholder="10 min" id="prepTime" name="prepTime" class="form-input" />
                 
     
                 <label class="info-prep" for="cookTime">Cook (min):</label>
-                <input type="number" placeholder="Cook (min):" id="cookTime" name="cookTime" class="form-input" />
+                <input type="number" placeholder="15 min" id="cookTime" name="cookTime" class="form-input" />
                 
     
                 <label class="info-prep" for="yieldAmt">Yield (servings):</label>
-                <input type="number" placeholder="Prep (min):" id="yieldAmt" name="yieldAmt" class="form-input" />
+                <input type="number" placeholder="25 min" id="yieldAmt" name="yieldAmt" class="form-input" />
                     </div>
                 
                 <div class="ingredients-form">
@@ -78,14 +78,14 @@
 
           <div class="right">
               <h2 class="form-heading">Directions</h2>
-            <textarea name="directions" id="directions" cols="30" rows="10"></textarea></div>
+              <input type="text" placeholder="Directions" id="directions" name="directions" class="form-input" /></div>
           
        
     </section>
     <!-- Save and Delete -->
-    <section class="right">
-        <button id="savePost" type="button">Save</button>
-        <button id="deletePost" type="button">Delete</button>
+    <section class="space-between">
+        <button class="new-recipe-button" id="savePost" type="button">Save</button>
+        <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
     </section>
     
 </body>
