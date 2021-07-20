@@ -1,14 +1,13 @@
-<article class="recipe">
-    <div class="title">
-        <a href="/recipe/{{recipe.id}}" class="recipeTitle">{{recipe.title}}</a>
-    </div>
-    <div class="times">
-        <span class="prepTime">Prep Time: {{recipe.prep_time}}</span>
-        <span class="cookTime">Cook Time: {{recipe.cook_time}}</span>
-    </div>
-    <div class="userCreate">
-        By {{user.username}} on {{format_date created_at}}
-        |
-        Rating: {{rating.score}}
-    </div>
-</article>
+<a href="/recipe/{{id}}"><img class="card-img-top" src="https://via.placeholder.com/250" alt="recipe-image"></a>
+
+<div class="card-body">
+    <a href="/recipe/{{id}}" class="card-title h5">{{title}}</a>
+    <div class="card-text">Prep Time: {{prep_time}}</div>
+    <div class="card-text">Cook Time: {{cook_time}}</div>
+    <div class="card-text">Rating: {{rating.score}} </div> 
+    {{!-- ^^^^ RATING ^^^^ this doesn't work yet --}}
+</div>
+
+<div class="card-footer">
+    By {{user.username}} on {{format_date created_at}}
+</div>

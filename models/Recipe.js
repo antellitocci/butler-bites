@@ -72,7 +72,8 @@ Recipe.init(
             allowNull: false
         },
         ingredients: {
-            type: DataTypes.ARRAY,
+            // type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.TEXT,
             allowNull: false
         },
         directions: {
