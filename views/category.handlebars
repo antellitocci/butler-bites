@@ -1,0 +1,30 @@
+<div class="container">
+    {{#if recipes.length}}
+    <section>
+        {{#if recipes.category_id: 1}}
+        <h2>Breakfast Recipes</h2>
+        {{else}} {{#if recipes.category_id: 2}}
+        <h2>Lunch Recipes</h2>
+        {{else}} {{#if recipes.category_id: 3}}
+        <h2>Dinner Recipes</h2>
+        {{else}} {{#if recipes.category_id: 4}}
+        <h2>Dessert Recipes</h2>
+        {{/if}}{{/if}}{{/if}}{{/if}}
+        <ol>
+            {{#each recipes as |recipe|}}
+            <li>
+            {{> recipe-info recipe}}
+            </li>
+            {{/each}}
+        </ol>
+    </section>
+    {{/if}}
+
+    <div class="row">
+        <div class="col text-center">
+            <a href="/dashboard/new/">
+                <button id="newPostBtn" type='button' class="btn-success">Create Post</button>
+            </a>
+        </div>
+    </div>
+</div> 
