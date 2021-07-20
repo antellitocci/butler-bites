@@ -3,8 +3,8 @@
   margin: 0;
   padding: 0;
   /* border: solid red 4px; */
-  color: #3b3939;
-  text-decoration: none;
+  color: #3b3939 !important;
+  text-decoration: none !important;
 }
 
 /* Colors */
@@ -36,8 +36,35 @@
   src: url(./LeHavre.otf);
 }
 
-/* Header */
+/*ANT - Cards / Handlebars Styles*/
+.bites-font-main{
+  font-family: 'JohnDoe';
+}
 
+.bites-font-header{
+  font-family: 'JohnDoeBold';
+}
+
+.butler-bites-header{
+  font-family: 'LeHarve';
+  font-size: clamp(1.5rem, 2rem, 2.25rem);
+}
+
+.butler-bites-title{
+  font-family: 'JohnDoeBold';
+  font-size: clamp(3rem, 3.25rem, 3.5rem);
+  display: flex;
+}
+
+.bites-card-gap{
+  margin: auto 5px auto 5px;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+/* Header */
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -214,14 +241,15 @@ header nav ul li a:hover {
 
 /* Body Text */
 .body {
-  margin-top: -250px;
+  margin-left: 4%;
+  margin-top: -35%;
 }
 
 .body p {
   font-family: LeHarve;
-  font-size: 45px;
-  margin-left: 20px;
-  margin-right: 80px;
+  font-size: clamp(2rem, 2.25rem, 2.5rem);
+  /* margin-left: 20px;
+  margin-right: 80px; */
 }
 .body div {
   display: flex;

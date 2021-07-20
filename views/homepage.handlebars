@@ -1,16 +1,27 @@
-<div class="container">
-    <form id="categoryBtnEl" class="col-12 row justify-content-around">
-        <button type="submit" id="1">Breakfast</button>
-        <button type="submit" id="2">Lunch</button>
-        <button type="submit" id="3">Dinner</button>
-        <button type="submit" id="4">Dessert</button>
-    </form>
+<section class="hero img-fluid row">
+    <img class="hero-img" id="pizzaHero" src="/stylesheets/css/images/pizza.jpg" alt="Pizza">
+</section>
+<div class="body">
+    <p>Explore hand selected recipes provided 
+    by our robust Butler community. 
+    Whether you’re a beginner or a five-star chef, 
+    there will always be great recipes available 
+    to try out! There might even be something 
+    you want to share with the community!</p>
+    <p>Check out some of the recipes below or choose a category above to get started.</p>   
+</div>
 
-    <ol class="recipe-list">
+
+<div class="row justify-content-center mx-2">
     {{#each recipes as |recipe|}}
-    <li>
-        {{> recipe-info recipe }}
-    </li>
+    {{#if @first }}
+    <div class="card col-4 my-3 p-0 bites-card-gap">
+        {{> recipe-info recipe}}
+    </div>
+    {{else}}
+    <div class="card col-4 my-3 p-0 bites-card-gap">
+        {{> recipe-info recipe}}
+    </div>
+    {{/if}}
     {{/each}}
-    </ol>
-</div>   
+</div>

@@ -2,6 +2,11 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Recipe, User, Comment, Rating, Category, Ingredient } = require('../models');
 
+// router.get('/', (req, res) =>{
+//     res.render('homepage');
+// })
+
+
 router.get('/', (req, res) => {
     Recipe.findAll({
         attributes: [
@@ -12,6 +17,7 @@ router.get('/', (req, res) => {
             'prep_time',
             'cook_time'
         ],
+        order: [ ['created_at', 'DESC'] ],
         include: [
             {
                 model: User,
@@ -51,6 +57,7 @@ router.get('/category/:id', (req, res) => {
             'title',
             'user_id',
             'created_at',
+            'category_id',
             'prep_time',
             'cook_time'
         ],
@@ -65,7 +72,7 @@ router.get('/category/:id', (req, res) => {
             },
             {
                 model: Category,
-                attributes: ['name']
+                attributes: ['category_name']
             }
         ]
     })
@@ -75,8 +82,11 @@ router.get('/category/:id', (req, res) => {
             return;
         }
         const recipes = dbRecipeData.map(recipe => recipe.get({ plain:true }));
-        res.render('homepage', {
+        const category = dbRecipeData[0].category.category_name;
+        console.log(recipes);
+        res.render('category', {
             recipes,
+            category,
             loggedIn: req.session.loggedIn
         });
     })

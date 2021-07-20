@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'user_id',
-            // [sequelize.literal('(SELECT AVG(*) FROM rating WHERE recipe_id = rating.recipe_id'), 'average_rating']
+            // [sequelize.literal('(SELECT AVG(*) FROM rating WHERE recipe_id = rating.recipe_id)'), 'average_rating']
         ],
         include: [
             {
@@ -65,7 +65,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create new recipe
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Recipe.create({
         title: req.body.title,
         user_id: req.session.user_id,
