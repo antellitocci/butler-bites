@@ -1,0 +1,16 @@
+<div class="container">
+    <form id="categoryBtnEl" class="col-12 row justify-content-around">
+        <button type="submit" id="1">Breakfast</button>
+        <button type="submit" id="2">Lunch</button>
+        <button type="submit" id="3">Dinner</button>
+        <button type="submit" id="4">Dessert</button>
+    </form>
+
+    <ol class="recipe-list">
+    {{#each recipes as |recipe|}}
+    <li>
+        {{> recipe-info recipe }}
+    </li>
+    {{/each}}
+    </ol>
+</div>   
