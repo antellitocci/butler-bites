@@ -72,7 +72,7 @@ Recipe.init(
             allowNull: false
         },
         ingredients: {
-            type: DataTypes.TEXT,
+            type: DataTypes.ARRAY,
             allowNull: false
         },
         directions: {
