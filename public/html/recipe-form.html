@@ -9,7 +9,10 @@
 <body>
     <header>
         <div class="top-bar">
-            <div class="search-bar"><span class="ico ico-mglass"></span></div>
+            <form class="example" action="/action_page.php" style="max-width:300px">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
             <div class="user-corner">
                 <div class="post-button"><a href="./recipe-form.html" >Post+</a></div>
                 <div class="icon"><span id="circle"></span> <span id="triangle"></span></div>
@@ -22,14 +25,18 @@
     </header>
     <!-- Form -->
     <section>
-        <form>
-            <label for="Title">Your Title</label>
-            <input type="text" placeholder="Your Name" id="titleRecipe" name="title" class="form-input" />
-
-            <label for="pictureLink">Your Recipe Picture URL</label>
-            <input type="url" placeholder="Your Recipe Picture URL" id="pictureLink" name="pictureLink" class="form-input" />
+        <form class="form-heading" >
+            <div class="title-form"><label for="Title">Title</label>
+                <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" />
+            </div>
             
-            <label class="label" for="meal-type">Choose a meal type:</label>
+            <div class="pic-form">
+                <label for="pictureLink">Recipe Picture URL</label>
+            <input type="url" placeholder="URL" id="pictureLink" name="pictureLink" class="form-input" />
+            </div>
+            
+            <div class="meal-form">
+                <label class="form-input" id="mealType" for="meal-type">Choose a meal type:</label>
             <!-- Selection of what type of meal the user wants to categorize their recipe -->
                 <select class="button" name="categorize" id="categorize">
                     <option value="breakfast">Breakfast</option>
@@ -37,28 +44,37 @@
                     <option value="dinner">Dinner</option>
                     <option value="dessert">Dessert</option>
                 </select>
-
-            <label for="prepTime">Prep (min):</label>
-            <input type="number" placeholder="Prep (min):" id="prepTime" name="prepTime" class="form-input" />
+            </div>
             
-
-            <label for="cookTime">Cook (min):</label>
-            <input type="number" placeholder="Cook (min):" id="cookTime" name="cookTime" class="form-input" />
             
-
-            <label for="yieldAmt">Yield (servings):</label>
-            <input type="number" placeholder="Prep (min):" id="yieldAmt" name="yieldAmt" class="form-input" />
-            
-
-            <label for="ingredients">Ingredients</label>
-            <input type="text" placeholder="ingredients" id="ingredients" name="ingredients" class="form-input" />
-
+                <div class="split">
+                    <div class="prep">
+                        <label class="info-prep" for="prepTime">Prep (min):</label>
+                <input type="number" placeholder="Prep (min):" id="prepTime" name="prepTime" class="form-input" />
+                
+    
+                <label class="info-prep" for="cookTime">Cook (min):</label>
+                <input type="number" placeholder="Cook (min):" id="cookTime" name="cookTime" class="form-input" />
+                
+    
+                <label class="info-prep" for="yieldAmt">Yield (servings):</label>
+                <input type="number" placeholder="Prep (min):" id="yieldAmt" name="yieldAmt" class="form-input" />
+                    </div>
+                
+                <div class="ingredients-form">
+                <label for="ingredients">Ingredients</label>
+                <input type="text" placeholder="Ingredients" id="ingredients" name="ingredients" class="form-input" />
+                </div>
+                
+    
+                </div>
+                
             <!-- <button type="submit">
               Save
             </button> -->
           </form>
 
-          <h2>Directions</h2>
+          <h2 class="form-heading">Directions</h2>
           <textarea name="directions" id="directions" cols="30" rows="10"></textarea>
        
     </section>

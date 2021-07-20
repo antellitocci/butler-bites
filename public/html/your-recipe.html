@@ -9,7 +9,10 @@
 <body>
     <header>
         <div class="top-bar">
-            <div class="search-bar"><span class="ico ico-mglass"></span></div>
+            <form class="example" action="/action_page.php" style="max-width:300px">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
             <div class="user-corner">
                 <div class="post-button"><a href="./recipe-form.html" >Post+</a></div>
                 <div class="icon"><span id="circle"></span> <span id="triangle"></span></div>
@@ -42,20 +45,20 @@
         </section>
 
         <!-- Body text and lists of recipes -->
-        <section>
-            <h1>Your Recipes</h1>
+        <section class="body meal">
+            <h1 class="body-title">Your Recipes</h1>
             <!-- Recipes: -->
-            <div id= "recipeBreakfast">
+            <div id= "recipeOwner" class="recipe-border">
                 <!-- Can change this id around if you want -->
-                <ul class="recipe">
-                    <li>
+                        <div class="user-date">
                         <h5 id="dateTime" class="dateTime">Date</h5>
-                        <h5 id="userName" class="user-name">Username</h5>
-                        <h1 id="foodTitle" class="food-title">Title of Food</h1>
+                        <h5 id="userName" class="user-name"><a href="./your-recipe.html" >Username</a></h5>
+                        </div>
+                        <div class="recipe-title">
+                            <h1 id="foodTitle" class="food-title"><a href="./view-recipe.html" >Title of Food</a></h1>
                         <div id="starRating" class="star-rating"></div>
-                        <button type="button" id="edit">Edit</button>
-                    </li>
-                </ul>
+                        <button id="editButton">Edit</button>
+                        </div>
             </div>
         </section>
     </main>

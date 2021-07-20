@@ -75,38 +75,6 @@ form.example::after {
   clear: both;
   display: table;
 }
-
-/* .search-bar {
-  height: 40px;
-  width: 180px;
-  border: thin solid black;
-} */
-/* Magnifying glass icon */
-@import "compass/css3";
-
-/* .ico-mglass {
-  position: relative;
-  display: inline-block;
-  background: #fff;
-  border-radius: 60px;
-  height: 20px;
-  width: 20px;
-  border: 4px solid #888;
-
-  &:after {
-    content: "";
-    height: 4px;
-    width: 12px;
-    background: #888;
-    position: absolute;
-    top: 14px;
-    left: 10px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-  }
-} */
 /* End of Search Bar */
 
 /* Post and Login */
@@ -233,6 +201,18 @@ header nav ul li a:hover {
   justify-content: center;
   padding-bottom: 50px;
 }
+
+.body-title {
+  font-size: 55px;
+  font-family: JohnDoe;
+  margin-left: 20px;
+  margin-right: 80px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+  color: var(--your-recipes);
+}
+
 /* End of Body Text*/
 
 /* Recipe List */
@@ -248,13 +228,15 @@ header nav ul li a:hover {
 .user-date h5 {
   font-family: LeHarve;
   font-size: 40px;
-  margin-left: -120px;
+  margin-left: -300px;
   padding-top: 40px;
   text-decoration: none;
 }
 
 #dateTime {
   margin-top: -40px;
+  margin-left: -370px;
+  position: absolute;
 }
 
 .recipe-title {
@@ -271,6 +253,25 @@ header nav ul li a:hover {
   border: solid red 3px;
 }
 
+#editButton {
+  background-color: var(--edit-button);
+  opacity: 0.7;
+  color: var(--your-recipes);
+  border: solid 4px var(--your-recipes);
+  font-family: LeHarve;
+  font-size: 35px;
+  width: 100px;
+  height: 65px;
+  position: absolute;
+  margin-right: -1240px;
+}
+
+#editButton:hover {
+  opacity: 1;
+}
+/* End of Recipe List */
+
+/* Login banner */
 #loginBanner h2 {
   margin-top: 155px;
   height: 250px;
@@ -284,5 +285,51 @@ header nav ul li a:hover {
 }
 
 #loginBanner h2:hover {
+  opacity: 1;
+}
+
+/* End of Login Banner */
+
+/* New Recipe Form */
+.form-heading {
+  font-size: 40px;
+  font-family: JohnDoe;
+}
+
+.form-input {
+  background-color: var(--gray-filling);
+  border: solid 3px var(--black);
+  font-size: 25px;
+  font-family: LeHavre;
+}
+
+.split {
+  display: flex;
+}
+
+.ingredients-form {
+  display: block;
+}
+
+#mealType {
+}
+
+.prep {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-prep {
+  font-size: 25px;
+}
+
+.new-recipe-button {
+  font-family: JohnDoe;
+  font-size: 75px;
+  border: solid 5px var(--black);
+  opacity: 0.75;
+}
+
+.new-recipe-button:hover {
   opacity: 1;
 }
