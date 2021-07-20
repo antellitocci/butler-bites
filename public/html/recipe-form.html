@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler Bites</title>
     <link rel="stylesheet" href="../stylesheets/css/style.css"/>
+       <!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -26,16 +28,16 @@
     <!-- Form -->
     <section>
         <form class="form-heading" >
-            <div class="title-form"><label for="Title">Title</label>
+            <div class="right"><label for="Title">Title</label>
                 <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" />
             </div>
             
-            <div class="pic-form">
+            <div class="right">
                 <label for="pictureLink">Recipe Picture URL</label>
             <input type="url" placeholder="URL" id="pictureLink" name="pictureLink" class="form-input" />
             </div>
             
-            <div class="meal-form">
+            <div class="right">
                 <label class="form-input" id="mealType" for="meal-type">Choose a meal type:</label>
             <!-- Selection of what type of meal the user wants to categorize their recipe -->
                 <select class="button" name="categorize" id="categorize">
@@ -74,12 +76,14 @@
             </button> -->
           </form>
 
-          <h2 class="form-heading">Directions</h2>
-          <textarea name="directions" id="directions" cols="30" rows="10"></textarea>
+          <div class="right">
+              <h2 class="form-heading">Directions</h2>
+            <textarea name="directions" id="directions" cols="30" rows="10"></textarea></div>
+          
        
     </section>
     <!-- Save and Delete -->
-    <section>
+    <section class="right">
         <button id="savePost" type="button">Save</button>
         <button id="deletePost" type="button">Delete</button>
     </section>

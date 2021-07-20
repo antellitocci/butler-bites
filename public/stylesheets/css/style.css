@@ -305,10 +305,17 @@ header nav ul li a:hover {
 
 .split {
   display: flex;
+  margin: 40px 40px 40px 40px;
+}
+
+.right {
+  margin: 40px 40px 40px 40px;
 }
 
 .ingredients-form {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
 }
 
 #mealType {
@@ -321,6 +328,7 @@ header nav ul li a:hover {
 
 .info-prep {
   font-size: 25px;
+  margin: 20px 20px 20px 20px;
 }
 
 .new-recipe-button {
