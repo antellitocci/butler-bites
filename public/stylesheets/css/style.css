@@ -271,6 +271,76 @@ header nav ul li a:hover {
 }
 /* End of Recipe List */
 
+/* Recipe Banner */
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.user-date2 h5 {
+  font-family: LeHarve;
+  font-size: 40px;
+  margin-left: -450px;
+  padding-top: 40px;
+  text-decoration: none;
+}
+
+.star-rating2 {
+  position: absolute;
+  height: 60px;
+  width: 280px;
+  border: solid red 3px;
+  margin-left: 15px;
+  margin-top: 0px;
+}
+
+#selectedHero {
+  width: 900px;
+  height: 500px;
+  border: solid 3px red;
+  margin-left: 250px;
+}
+/* End of Recipe Banner */
+
+/* RECIPE */
+.margin-left {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+/* Recipe Prep Times */
+.prep-border {
+  width: 230px;
+  height: 275px;
+  border: solid 4px var(--breakfast-selection);
+  margin-bottom: 40px;
+}
+
+.prep-border ul li {
+  font-size: 35px;
+  font-family: LeHarve;
+  padding: 10px;
+}
+
+.recipe-sections {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+/* Ingredients and Directions*/
+.recipe-sections h2 {
+  font-size: 45px;
+  font-family: JohnDoe;
+}
+
+.recipe-sections p {
+  font-size: 35px;
+  font-family: LeHarve;
+  padding: 10px;
+}
+
+/* Comments */
+/* Add a Comment */
+
 /* Login banner */
 #loginBanner h2 {
   margin-top: 155px;
@@ -364,3 +434,5 @@ header nav ul li a:hover {
   margin: 40px 0px 40px 113px;
   justify-content: space-evenly;
 }
+
+/*End of Recipe Form */
