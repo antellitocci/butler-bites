@@ -100,5 +100,61 @@ router.get('/recipe/:id', (req, res) => {
     });
 });
 
+//  edit recipe
+router.get('/edit/:id', (req, res) => {
+    Recipe.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'title',
+            'user_id',
+            'category_id',
+            'prep_time',
+            'cook_time',
+            'serving_size',
+            'ingredients',
+            'directions'
+        ],
+        include: [
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Rating,
+                attributes: ['score']
+            },
+            {
+                model: Category,
+                attributes: ['category_name']
+            }
+        ]
+    })
+    .then(dbRecipeData => {
+        if (!dbRecipeData) {
+            res.status(404).json({ message: 'No recipe with that id found' });
+            return;
+        }
+        const recipe = dbRecipeData.get({ plain: true });
+        res.render('edit-recipe', {
+            recipe,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 module.exports = router;

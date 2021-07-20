@@ -85,17 +85,35 @@ router.post('/', withAuth, (req, res) => {
 
 // update recipe
 router.put('/:id', withAuth, (req, res) => {
-    Recipe.update({
-        title: req.body.title,
-        user_id: req.session.user_id,
-        category_id: req.body.category_id,
-        prep_time: req.body.prep_time,
-        cook_time: req.body.cook_time,
-        serving_size: req.body.serving_size,
-        ingredients: req.body.ingredients,
-        directions: req.body.directions
+    Recipe.update(
+        {
+            title: req.body.title,
+            user_id: req.session.user_id,
+            category_id: req.body.category_id,
+            prep_time: req.body.prep_time,
+            cook_time: req.body.cook_time,
+            serving_size: req.body.serving_size,
+            ingredients: req.body.ingredients,
+            directions: req.body.directions
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+    .then(dbRecipeData => {
+        if (!dbRecipeData) {
+            res.status(404).json({ message: 'No recipe with that id found' });
+            return;
+        }
+        res.json(dbRecipeData);
     })
-})
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 // delete recipe
 router.delete('/:id', withAuth, (req, res) => {
