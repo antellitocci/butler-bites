@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler Bites</title>
     <link rel="stylesheet" href="../stylesheets/css/style.css"/>
+       <!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <div class="top-bar">
-            <div class="search-bar"><span class="ico ico-mglass"></span></div>
+            <form class="example" action="/action_page.php" style="max-width:300px">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
             <div class="user-corner">
                 <div class="post-button"><a href="./recipe-form.html" >Post+</a></div>
                 <div class="icon"><span id="circle"></span> <span id="triangle"></span></div>
@@ -22,22 +27,27 @@
     </header>
     <main>
         <!-- Recipe info banner -->
-        <section>
-            <h5 id="dateTime" class="dateTime">Date</h5>
-                        <h3 id="userName" class="user-name">Username</h3>
-                        <h1 id="foodTitle" class="food-title">Title of Food</h1>
-                        <div id="starRating" class="star-rating"></div>
-        </section>
+            <section id= "recipeOwner" class="center recipe-border">
+                 <!-- Can change this id around if you want -->
+                <div class="user-date2">
+                    <h5 id="userName" class="user-name2"><a href="./your-recipe.html">Username</a></h5>
+                    </div>
+                    <div class="recipe-title">
+                        <h1 id="foodTitle" class="food-title"><a href="./view-recipe.html" >Title of Food</a></h1>
+                    <div id="starRating" class="star-rating2"></div>
+                        
+                        </div>
+           </section> 
 
         <!-- Hero image of user's selection -->
-        <section id="selectedHero" class="hero">
+        <section id="selectedHero">
                 <img src="" alt="">
         </section>
-
-        <!-- Recipe Info -->
+        <div class="margin-left">
+                   <!-- Recipe Info -->
         <section>
             <!-- Time-->
-            <div>
+            <div class="prep-border">
                 <ul>
                     <li>Prep: <span id="prep"></span> min</li>
                     <li>Cook: <span id="cook"></span> min</li>
@@ -46,24 +56,24 @@
                 </ul>
             </div>
             <!-- Ingredients -->
-            <div>
+            <div class="recipe-sections">
                 <h2>Ingredients</h2>
-                <ul>
-                    <li id="ingredientList"></li>
-                </ul>
+                
+                    <p id="ingredients">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
             </div>
             <!-- Directions -->
-            <div>
-                <h2>Directions</h2>
-                <p></p>
+            <div class="recipe-sections">
+                <h2 >Directions</h2>
+                <p id=directions> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </section>
 
         <!-- Comments -->
         <section>
             <!-- Existing comments -->
-            <div>
-                <h2>Comments</h2>
+            <div class="recipe-sections">
+                <h2 >Comments</h2>
                 <ul>
                     <li id="singleComment" class="single-comment">
                         <h5 id="dateTime" class="dateTime">Date</h5>
@@ -74,11 +84,13 @@
             </div>
             <!-- Add Comment -->
             <div>
-                <h2>Add a Comment:</h2>
+                <h2 class="recipe-sections">Add a Comment:</h2>
                 <textarea name="new-comment" id="newComment" cols="30" rows="10"></textarea>
                 <button class="comment-button" type="button">Post</button>
             </div>
         </section>
+        </div>
+ 
     </main>
     
 </body>
