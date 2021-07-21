@@ -15,7 +15,10 @@ router.get('/', (req, res) => {
             'user_id',
             'created_at',
             'prep_time',
-            'cook_time'
+            'cook_time',
+            'serving_size',
+            'ingredients',
+            'directions'
         ],
         order: [ ['created_at', 'DESC'] ],
         include: [
@@ -57,9 +60,11 @@ router.get('/category/:id', (req, res) => {
             'title',
             'user_id',
             'created_at',
-            'category_id',
             'prep_time',
-            'cook_time'
+            'cook_time',
+            'serving_size',
+            'ingredients',
+            'directions'
         ],
         include: [
             {
@@ -68,7 +73,8 @@ router.get('/category/:id', (req, res) => {
             },
             {
                 model: Rating,
-                attributes: ['score']
+                attributes: [[sequelize.fn('AVG', sequelize.col('score')), 'average_score']],
+                group: 'recipe_id'
             },
             {
                 model: Category,
@@ -82,7 +88,12 @@ router.get('/category/:id', (req, res) => {
             return;
         }
         const recipes = dbRecipeData.map(recipe => recipe.get({ plain:true }));
+        // let ingredientArr = [];
+        // dbRecipeData.forEach(element => ingredientArr.push(element.ingredients.split(',')));
+        // const ingredient_list = ingredientArr.flat();
+        // console.log(ingredient_list);
         const category = dbRecipeData[0].category.category_name;
+        console.log(category);
         console.log(recipes);
         res.render('category', {
             recipes,
