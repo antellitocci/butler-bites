@@ -2,7 +2,7 @@ async function newFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="title"]').value;
-    const category_id = document.querySelector('select[name="categorize"')
+    const category_id = document.querySelector('select[name="categorize"').value;
     const prep_time = document.querySelector('input[name="prepTime"]').value;
     const cook_time = document.querySelector('input[name="cookTime"]').value;
     const serving_size = document.querySelector('input[name="servingSize"]').value;
