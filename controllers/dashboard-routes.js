@@ -165,7 +165,10 @@ router.get('/new-recipe', (req, res) => {
         return;
     }
     
-    res.render('new-recipe');
+    res.render('new-recipe', {
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
+    });
 });
 
 module.exports = router;
