@@ -85,13 +85,8 @@ router.get('/category/:id', (req, res) => {
     })
     .then(dbRecipeData => {
         if(!dbRecipeData) {
-            const category = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
-            res.render('category', {
-                category,
-                loggedIn: req.session.loggedIn,
-                username: req.session.username
-            });
-            // res.status(404).json({ message: 'No recipes found in that category' });
+            res.status(404).json({ message: 'No recipes found in that category' });
+            return;
         }
         const recipes = dbRecipeData.map(recipe => recipe.get({ plain:true }));
         const category = dbRecipeData[0].category.category_name;

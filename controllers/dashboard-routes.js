@@ -35,7 +35,8 @@ router.get('/', (req, res) => {
         const recipes = dbRecipeData.map(recipe => recipe.get({ plain:true }));
         res.render('dashboard', {
             recipes,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            username: req.session.username
         });
     })
     .catch(err => {
@@ -91,7 +92,8 @@ router.get('/recipe/:id', (req, res) => {
         const recipe = dbRecipeData.get({ plain: true });
         res.render('single-recipe', {
             recipe,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            username: req.session.username
         });
     })
     .catch(err => {
