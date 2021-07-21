@@ -93,7 +93,8 @@ router.get('/category/:id', (req, res) => {
         res.render('category', {
             recipes,
             category,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            username: req.session.username
         });
     })
     .catch(err => {
