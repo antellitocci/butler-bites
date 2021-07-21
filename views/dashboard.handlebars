@@ -1,0 +1,15 @@
+<h2 class="row justify-content-center category-header">
+    Your Recipes
+</h2>
+
+<div class="row justify-content-center mx-2">
+    {{#if recipes.length}}
+        {{#each recipes as |recipe|}}
+        <div class="card col-4 my-3 p-0 bites-card-gap">
+            {{> recipe-info recipe}}
+        </div>
+        {{/each}}
+    {{else}}
+    <h3>No {{category}} recipes exist yet! You can help by <a href="/new-recipe">adding one.</a></h3>
+    {{/if}}
+</div>

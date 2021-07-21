@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
+// const sessSecret = process.env.SESS_SECRET;
 
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
