@@ -41,7 +41,8 @@ router.get('/', (req, res) => {
         console.log(recipes);
         res.render('homepage', {
             recipes,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            username: req.session.username //testing to see if we can display username
         });
     })
     .catch(err => {
@@ -168,5 +169,17 @@ router.get('/login', (req, res) => {
   
     res.render('login');
 });
+
+// GET | sign-up page rendering
+router.get('/signup', (req, res) => {
+    // IF THE USER IS ALREADY LOGGED IN, REDIRECT TO HOMEPAGE
+    if(req.session.loggedIn){
+        res.redirect('/');
+        return;
+    }
+    // SHOW REGISTER PAGE OTHERWISE
+    res.render('signup');
+});
+
 
 module.exports = router;

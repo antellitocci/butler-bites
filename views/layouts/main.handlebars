@@ -41,5 +41,8 @@
     <main class="container" style="margin-top: 15%;">
       {{{ body }}}
     </main>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 </html>

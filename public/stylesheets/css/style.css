@@ -584,3 +584,16 @@ header nav ul li a:hover {
 .recipe-details{
   font-size: clamp(1.5rem, 1.75rem, 2rem) !important;
 }
+
+.btn-dark{
+  color: white !important;
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+}
+
+.email-helper, .password-helper{
+  font-size: clamp(1.5rem, 1.75rem, 2rem);
+}
+
+.login-helper{
+  font-size: clamp(1.25rem, 1.5rem, 1.75rem);
+}

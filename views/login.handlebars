@@ -1,18 +1,23 @@
-<form class="login-form">
-    <div>
-        <label>email:</label>
-        <input type="text" id="email-login" placeholder="User-email" />
-    </div>
-    <div>
-        <label>password</label>
-        <input type="password" id="password-login" placeholder="User-password" />
-    </div>
-    <div>
-        <button type="submit">login</button>
-    </div>
+<div class="row justify-content-center">
+<form class="col-6" id="login-form">
+  <div class="form-group">
+    <label for="email-login" class="email-helper">Email address</label>
+    <input type="email" class="form-control login-helper" id="email-login" aria-describedby="emailHelp" placeholder="Email">
+</div>
+  <div class="form-group">
+    <label for="password-login" class="password-helper">Password</label>
+    <input type="password" class="form-control login-helper" id="password-login" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-dark">Sign In</button>
+  <div class="mt-2 login-helper">
+    <span>Have something to share? <a href="/signup">Join Now</a>!</span>
+</div>
 </form>
 
-<div>
-    <span>If you are not a member already, please join us today!</span>
-    <a href="/signup">Join Now</a>
+
 </div>
+
+
+
+
+<script src="/javascript/login.js"></script>
