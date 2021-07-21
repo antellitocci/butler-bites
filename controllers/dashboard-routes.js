@@ -159,4 +159,13 @@ router.get('/edit/:id', (req, res) => {
     });
 });
 
+router.get('/new-recipe', (req, res) => {
+    if(!req.session.loggedIn){
+        res.redirect('/login');
+        return;
+    }
+    
+    res.render('new-recipe');
+});
+
 module.exports = router;
