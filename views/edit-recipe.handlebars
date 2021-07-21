@@ -1,0 +1,45 @@
+<section>
+        <form class="editRecipeForm">
+            <label for="Title">Recipe Name</label>
+            <textarea id="titleRecipe" name="title" class="form-input">{{recipe.title}}</textarea>
+
+            <label class="label" for="meal-type">Choose a meal type:</label>
+            <!-- Selection of what type of meal the user wants to categorize their recipe -->
+                <select class="button" name="categorize" id="categorize">
+                    <option value="1">Breakfast</option>
+                    <option value="2">Lunch</option>
+                    <option value="3">Dinner</option>
+                    <option value="4">Dessert</option>
+                </select>
+
+            <label for="prepTime">Prep Time:</label>
+            <textarea id="prepTime" name="prepTime">{{recipe.prep_time}}</textarea>
+            
+
+            <label for="prepTime">Cook Time:</label>
+            <textarea id="cookTime" name="cookTime">{{recipe.cook_time}}</textarea>            
+
+            <label for="yieldAmt">Yield (servings):</label>
+            <textarea id="yieldAmt" name="servingSize">{{recipe.serving_size}}</textarea>
+            
+
+            <label for="ingredients">Ingredients</label>
+            <textarea id="ingredients" name="ingredients">{{recipe.ingredients}}</textarea>
+
+            <label for="directions">Directions</label>
+            <textarea id="directions" name="directions">{{recipe.directions}}</textarea>
+            <!-- <button type="submit">
+              Save
+            </button> -->
+            <button id="savePost" type="submit">Save</button>
+          </form>
+
+          {{!-- <h2>Directions</h2>
+          <textarea name="directions" id="directions" cols="30" rows="10"></textarea> --}}
+       
+    </section>
+    <!-- Save and Delete -->
+    <section>
+        
+        <button id="deletePost" type="button">Delete</button>
+    </section>
