@@ -3,9 +3,10 @@
   margin: 0;
   padding: 0;
   /* border: solid red 4px; */
-  color: #3b3939;
+  color: #3b3939 !important;
   text-decoration: none;
 }
+
 /* Colors */
 :root {
   --login-or-signup-text: #830100;
@@ -19,6 +20,7 @@
   --edit-button: #d65500;
   --gray-filling: #f2f2f2;
 }
+
 /* Common Fonts */
 @font-face {
   font-family: JohnDoe;
@@ -28,15 +30,19 @@
   font-family: JohnDoeBold;
   src: url(./JohnDoeBold.otf);
 }
+
 @font-face {
   font-family: LeHarve;
   src: url(./LeHavre.otf);
 }
+
 /* Header */
+
 .top-bar {
   display: flex;
   justify-content: space-between;
 }
+
 /* Search bar */
 form.example input[type="text"] {
   padding: 10px;
@@ -47,6 +53,7 @@ form.example input[type="text"] {
   width: 80%;
   background: #f1f1f1;
 }
+
 form.example button {
   float: left;
   width: 20%;
@@ -58,15 +65,18 @@ form.example button {
   border-left: none;
   cursor: pointer;
 }
+
 form.example button:hover {
   background: #f78f20;
 }
+
 form.example::after {
   content: "";
   clear: both;
   display: table;
 }
 /* End of Search Bar */
+
 /* Post and Login */
 /* Login */
 .user-corner {
@@ -100,9 +110,11 @@ form.example::after {
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
+
   border-bottom: 25px solid var(--black);
 }
 /* End of Post and Login */
+
 /* Title */
 header {
   padding: 15px 45px;
@@ -115,14 +127,18 @@ header {
   top: 0;
   z-index: 9999;
 }
+
 header h1 a {
   display: flex;
   justify-content: center;
   font-size: 60px;
   padding-bottom: 20px;
 }
+
 /* End of Title */
+
 /* Navigation */
+
 header nav ul {
   /* margin: 7px 0; */
   display: flex;
@@ -131,26 +147,32 @@ header nav ul {
   align-items: center;
   list-style: none;
 }
+
 header nav ul li a {
   padding: 10px 45px;
   font-size: 2vw;
 }
+
 header nav ul li a:hover {
   color: var(--lunch-selection);
 }
+
 #breakfastSelect a {
   color: var(--breakfast-selection);
 }
 #lunchSelect a {
   color: var(--lunch-selection);
 }
+
 /* Header and Navigation End */
+
 /* Hero Img */
-.hero {
+/* .hero {
   height: 920px;
-}
+} */
+
 .hero-img {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -163,26 +185,29 @@ header nav ul li a:hover {
 }
 
 /* End of Hero */
+
 /* Body Text */
-.body {
+/* .body {
   margin-top: -250px;
-  margin-left: 5%;
-}
+} */
+
 .body p {
   font-family: LeHarve;
   font-size: 45px;
-  margin-left: 20px;
+  margin-left: 100px;
   margin-right: 80px;
 }
 .body div {
   display: flex;
   justify-content: center;
 }
+
 .meal p {
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
 }
+
 .body-title {
   font-size: 55px;
   font-family: JohnDoe;
@@ -193,10 +218,13 @@ header nav ul li a:hover {
   padding-bottom: 50px;
   color: var(--your-recipes);
 }
+
 /* End of Body Text*/
+
 /* Recipe List */
 .recipe-border {
   padding: 20px 0px 60px 0px;
+
   border: solid var(--black) 3px;
 }
 .user-date {
@@ -210,16 +238,19 @@ header nav ul li a:hover {
   padding-top: 40px;
   text-decoration: none;
 }
+
 #dateTime {
   margin-top: -40px;
   margin-left: -370px;
   position: absolute;
 }
+
 .recipe-title {
-  display: block;
+  /* display: block; */
   font-family: JohnDoe;
-  font-size: 32px;
+  /* font-size: 32px; */
 }
+
 .star-rating {
   position: absolute;
   height: 60px;
@@ -230,6 +261,7 @@ header nav ul li a:hover {
 .checked {
   color: var(--edit-button);
 }
+
 #editButton {
   background-color: var(--edit-button);
   opacity: 0.7;
@@ -242,15 +274,25 @@ header nav ul li a:hover {
   position: absolute;
   margin-right: -1240px;
 }
+
 #editButton:hover {
   opacity: 1;
 }
 /* End of Recipe List */
+
 /* Recipe Banner */
+.flex-row
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 50px auto;
+}
 .center {
   display: flex;
   justify-content: center;
 }
+
 .user-date2 h5 {
   font-family: LeHarve;
   font-size: 40px;
@@ -258,6 +300,7 @@ header nav ul li a:hover {
   padding-top: 40px;
   text-decoration: none;
 }
+
 .star-rating2 {
   position: absolute;
   height: 60px;
@@ -265,6 +308,7 @@ header nav ul li a:hover {
   margin-left: 15px;
   margin-top: 0px;
 }
+
 #selectedHero {
   width: 900px;
   height: 500px;
@@ -272,6 +316,7 @@ header nav ul li a:hover {
   margin-left: 250px;
 }
 /* End of Recipe Banner */
+
 /* RECIPE */
 .margin-left {
   margin-left: 50px;
@@ -284,12 +329,14 @@ header nav ul li a:hover {
   border: solid 4px var(--breakfast-selection);
   margin-bottom: 40px;
 }
+
 .prep-border ul li {
   font-size: 35px;
   font-family: LeHarve;
   padding: 10px;
   list-style-type: none;
 }
+
 .recipe-sections {
   display: inline-block;
   margin-bottom: 50px;
@@ -299,11 +346,13 @@ header nav ul li a:hover {
   font-size: 45px;
   font-family: JohnDoe;
 }
+
 .recipe-sections p {
   font-size: 35px;
   font-family: LeHarve;
   padding: 10px;
 }
+
 /* Comments */
 .single-comment {
   font-size: 30px;
@@ -368,15 +417,19 @@ header nav ul li a:hover {
   color: var(--login-or-signup-text);
   text-align: center;
 }
+
 #loginBanner h2:hover {
   opacity: 1;
 }
+
 /* End of Login Banner */
+
 /* New Recipe Form */
 .form-heading {
   font-size: 40px;
   font-family: JohnDoe;
 }
+
 .form-input {
   background-color: var(--gray-filling);
   border: solid 3px var(--black);
@@ -386,49 +439,60 @@ header nav ul li a:hover {
   height: 55px;
   width: 300px;
 }
+
 .split {
   display: flex;
   margin: 40px 40px 40px 400px;
 }
+
 .right {
   margin: 40px 40px 40px 400px;
 }
+
 .ingredients-form {
   display: flex;
   flex-direction: column;
   margin-left: 200px;
 }
+
 #ingredients {
   margin-top: 20px;
   width: 265px;
   height: 250px;
   text-align: center;
 }
+
 #directions {
   width: 750px;
   height: 300px;
   text-align: center;
 }
+
 .prep {
   display: flex;
   flex-direction: column;
 }
+
 .prep input {
   width: 200px;
 }
+
 .info-prep {
   font-size: 25px;
   margin: 20px 20px 20px 0px;
 }
+
 .new-recipe-button {
   font-family: JohnDoe;
   font-size: 65px;
   border: solid 5px var(--black);
   opacity: 0.75;
 }
+
 .new-recipe-button:hover {
   opacity: 1;
 }
+
 .space-between {
   display: flex;
   margin: 40px 0px 40px 113px;
@@ -471,3 +535,52 @@ header nav ul li a:hover {
 }
 
 /* Signup */
+
+/*ANT - Cards / Handlebars Styles*/
+.bites-font-main{
+  font-family: 'JohnDoe';
+}
+
+.bites-font-header{
+  font-family: 'JohnDoeBold';
+}
+
+.butler-bites-header{
+  font-family: 'LeHarve';
+  font-size: clamp(1.5rem, 2rem, 2.25rem);
+}
+
+.butler-bites-title{
+  font-family: 'JohnDoeBold';
+  font-size: clamp(3rem, 3.25rem, 3.5rem);
+  display: flex;
+}
+
+.bites-card-gap{
+  margin: auto 5px auto 5px;
+}
+
+.card-body{
+  font-size: clamp(1.45rem, 1.55rem, 1.75rem);
+}
+
+.card-footer{
+  font-size: clamp(1.25rem, 1.35rem, 1.45rem);
+}
+
+.card-title{
+  font-size: clamp(1.5rem, 1.75rem, 2rem);
+  font-weight: bold;
+}
+
+.category-header, .ingredient-body{
+  font-size: clamp(2rem, 2.25rem, 2.5rem);
+}
+
+.ingredient-body h2{
+  font-size: clamp(2.5rem, 2.75rem, 3rem);
+}
+
+.recipe-details{
+  font-size: clamp(1.5rem, 1.75rem, 2rem) !important;
+}

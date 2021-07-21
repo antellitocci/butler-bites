@@ -1,0 +1,18 @@
+<div class="comments">
+    <div class="row recipe-sections">
+        <h2>Comments</h2>
+        {{#if this.length}}
+        <ul>
+            {{#each this}}
+            <li class="single-comment">
+                <h5 class="date-time">{{format_date created_at}}</h5>
+                <h5 class="user-name">{{user.username}}</h5>
+                <h3 class="comment-body">{{comment_text}}</h3>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <h3 class="mx-2">No comments yet!</h3>
+        {{/if}}
+    </div>
+</div>

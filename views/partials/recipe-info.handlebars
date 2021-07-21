@@ -1,74 +1,13 @@
- <!-- Recipe info banner -->
-<section id= "recipeOwner" class="center recipe-border">
-        <!-- Can change this id around if you want -->
-    <div class="user-date2">
-        <h5 id="userName" class="user-name2"><a href="/your-recipe">{{user.username}}</a></h5>
-        </div>
-        <div class="recipe-title">
-            <h1 id="foodTitle" class="food-title"><a href="/view-recipe" >{{title}}</a></h1>
-        <div id="starRating" class="star-rating2">{{return_avg_rating ratings}} / 5.00</div>
-    </div>
-</section> 
-
-<!-- Hero image of user's selection -->
-<section id="selectedHero">
-        <img src="https://via.placeholder.com/250" alt="{{title}} picture">
-</section>
-<div class="margin-left">
-            <!-- Recipe Info -->
-<section>
-    <!-- Time-->
-    <div class="prep-border">
-        <ul>
-            <li>Prep: <span id="prep">{{prep_time}}</span></li>
-            <li>Cook: <span id="cook">{{cook_time}}</span></li>
-            {{!-- <li>Total: <span id="total"></span></li> --}}
-            <li>Yield: <span id="yield">{{serving_size}}</span></li>
-        </ul>
-    </div>
-    <!-- Ingredients -->
-    <div class="recipe-sections">
-        <h2>Ingredients</h2>
-        <ul>
-        {{#each ingredients}}
-            <li id="ingredients">{{this}}</li>
-        {{/each}}
-        </ul>
-    </div>
-    <!-- Directions -->
-    <div class="recipe-sections">
-        <h2 >Directions</h2>
-        <p id="directions"> {{directions}}</p>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- <a href="/recipe/{{id}}"><img class="card-img-top" src="https://via.placeholder.com/250" alt="recipe-image"></a>
+<a href="/recipe/{{id}}"><img class="card-img-top" src="https://via.placeholder.com/250" alt="recipe-image"></a>
 
 <div class="card-body">
     <a href="/recipe/{{id}}" class="card-title h5">{{title}}</a>
-    <div class="card-text">Prep Time: {{prep_time}}</div>
-    <div class="card-text">Cook Time: {{cook_time}}</div>
-    <div class="card-text">Rating: {{rating.score}} </div> 
+    <div class="card-text">Prep Time: <i>{{prep_time}}</i></div>
+    <div class="card-text">Cook Time: <i>{{cook_time}}</i></div>
+    <div class="card-text">Rating: <i>{{return_avg_rating ratings}} / 5.00</i></div> 
     {{!-- ^^^^ RATING ^^^^ this doesn't work yet --}}
 </div>
 
 <div class="card-footer">
     By {{user.username}} on {{format_date created_at}}
-</div> --}}
+</div>

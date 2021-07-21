@@ -38,6 +38,7 @@ router.get('/', (req, res) => {
     })
     .then(dbRecipeData => {
         const recipes = dbRecipeData.map(recipe => recipe.get({ plain:true }));
+        console.log(recipes);
         res.render('homepage', {
             recipes,
             loggedIn: req.session.loggedIn
@@ -73,8 +74,7 @@ router.get('/category/:id', (req, res) => {
             },
             {
                 model: Rating,
-                attributes: [[sequelize.fn('AVG', sequelize.col('score')), 'average_score']],
-                group: 'recipe_id'
+                attributes: ['score']
             },
             {
                 model: Category,
@@ -88,13 +88,7 @@ router.get('/category/:id', (req, res) => {
             return;
         }
         const recipes = dbRecipeData.map(recipe => recipe.get({ plain:true }));
-        // let ingredientArr = [];
-        // dbRecipeData.forEach(element => ingredientArr.push(element.ingredients.split(',')));
-        // const ingredient_list = ingredientArr.flat();
-        // console.log(ingredient_list);
         const category = dbRecipeData[0].category.category_name;
-        console.log(category);
-        console.log(recipes);
         res.render('category', {
             recipes,
             category,
@@ -122,12 +116,13 @@ router.get('/recipe/:id', (req, res) => {
             'cook_time',
             'serving_size',
             'ingredients',
-            'directions'
+            'directions',
+            'created_at'
         ],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'recipe_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -153,6 +148,7 @@ router.get('/recipe/:id', (req, res) => {
             return;
         }
         const recipe = dbRecipeData.get({ plain: true });
+        console.log(recipe);
         res.render('single-recipe', {
             recipe,
             loggedIn: req.session.loggedIn

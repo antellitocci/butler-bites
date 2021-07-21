@@ -1,31 +1,12 @@
-<h2>
-    {{ category }} Recipes
+<h2 class="row justify-content-center category-header">
+    What's for {{ category }}?
 </h2>
-<section class="hero img-fluid row">
+
+<section class="img-fluid row mb-5">
     <img class="hero-img" id="{{ category }}Hero" src="/stylesheets/css/images/{{ category }}.jpg" alt="{{ category }} image">
 </section>
 
-<section class="body meal">
-    {{#if recipes.length}}
-        {{#each recipes as |recipe|}}
-        <!-- Recipes: -->
-        <div id= "recipeBreakfast" class="recipe-border">
-            {{> recipe-info recipe}}
-        </div>
-        {{/each}}
-    {{else}}
-    <h3>No {{category}} recipes exist yet! You can help by <a href="/new-recipe">adding one.</a></h3>
-    {{/if}}    
-</section>
-
-
-
-
-
-
-
-
-{{!-- <div class="row justify-content-center mx-2">
+<div class="row justify-content-center mx-2">
     {{#if recipes.length}}
         {{#each recipes as |recipe|}}
         <div class="card col-4 my-3 p-0 bites-card-gap">
@@ -35,4 +16,9 @@
     {{else}}
     <h3>No {{category}} recipes exist yet! You can help by <a href="/new-recipe">adding one.</a></h3>
     {{/if}}
-</div> --}}
+</div>
+
+
+
+
+
