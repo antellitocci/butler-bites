@@ -395,6 +395,7 @@ header nav ul li a:hover {
 .comment-button:hover {
   opacity: 1;
 }
+/* End of RECIPE */
 
 /* Login banner */
 #loginBanner h2 {
@@ -489,5 +490,40 @@ header nav ul li a:hover {
   margin: 40px 0px 40px 113px;
   justify-content: space-evenly;
 }
-
 /*End of Recipe Form */
+
+/* Login */
+.login-form {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form div {
+  display: flex;
+  margin: 40px 30px 30px 30px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-form label {
+  font-size: 40px;
+  font-family: JohnDoe;
+}
+
+.login-space {
+  margin-top: 30px;
+}
+
+.login-submit {
+  display: block;
+  background-color: var(--gray-filling);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup-link {
+  font-size: 40px;
+  font-family: LeHarve;
+}
+
+/* Signup */
