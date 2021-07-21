@@ -1,51 +1,58 @@
 <section>
-        <form class="newRecipeForm">
-            <label for="Title">Your Title</label>
-            <input type="text" placeholder="Your Name" id="titleRecipe" name="title" class="form-input" />
+    <form class="form-heading">
+        <div class="right"><label for="Title">Title</label>
+            <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" />
+        </div>
 
-            <label for="pictureLink">Your Recipe Picture URL</label>
-            <input type="url" placeholder="Your Recipe Picture URL" id="pictureLink" name="pictureLink" class="form-input" />
-            
-            <label class="label" for="meal-type">Choose a meal type:</label>
+        <div class="right">
+            <label for="pictureLink">Recipe Picture URL</label>
+            <input type="url" placeholder="URL" id="pictureLink" name="pictureLink" class="form-input" />
+        </div>
+
+        <div class="right">
+            <label class="form-heading" id="mealType" for="meal-type">Choose a meal type</label>
             <!-- Selection of what type of meal the user wants to categorize their recipe -->
-                <select class="button" name="categorize" id="categorize">
-                    <option value="1">Breakfast</option>
-                    <option value="2">Lunch</option>
-                    <option value="3">Dinner</option>
-                    <option value="4">Dessert</option>
-                </select>
+            <select class="button form-input" name="categorize" id="categorize">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Dessert</option>
+            </select>
+        </div>
 
-            <label for="prepTime">Prep (min):</label>
-            <input type="number" placeholder="Prep (min):" id="prepTime" name="prepTime" class="form-input" />
-            
 
-            <label for="cookTime">Cook (min):</label>
-            <input type="number" placeholder="Cook (min):" id="cookTime" name="cookTime" class="form-input" />
-            
+        <div class="split">
+            <div class="prep">
+                <label class="info-prep" for="prepTime">Prep (min):</label>
+                <input type="number" placeholder="10 min" id="prepTime" name="prepTime" class="form-input" />
 
-            <label for="yieldAmt">Yield (servings):</label>
-            <input type="number" placeholder="Prep (min):" id="yieldAmt" name="servingSize" class="form-input" />
-            
 
-            <label for="ingredients">Ingredients</label>
-            <input type="text" placeholder="ingredients" id="ingredients" name="ingredients" class="form-input" />
+                <label class="info-prep" for="cookTime">Cook (min):</label>
+                <input type="number" placeholder="15 min" id="cookTime" name="cookTime" class="form-input" />
 
-            <label for="directions">Directions</label>
-            <input type="text" placeholder="=directions" id="directions" name="directions" class="form-input" />
-            <!-- <button type="submit">
-              Save
-            </button> -->
-            <button id="savePost" type="submit">Save</button>
-          </form>
 
-          {{!-- <h2>Directions</h2>
-          <textarea name="directions" id="directions" cols="30" rows="10"></textarea> --}}
-       
-    </section>
-    <!-- Save and Delete -->
-    <section>
-        
-        <button id="deletePost" type="button">Delete</button>
-    </section>
+                <label class="info-prep" for="yieldAmt">Yield (servings):</label>
+                <input type="number" placeholder="25 min" id="yieldAmt" name="yieldAmt" class="form-input" />
+            </div>
 
-    <script src="/javascript/create-recipe"
+            <div class="ingredients-form">
+                <label for="ingredients">Ingredients</label>
+                <input type="text" placeholder="Ingredients" id="ingredients" name="ingredients" class="form-input" />
+            </div>
+        </div>
+    </form>
+
+    <div class="right">
+        <h2 class="form-heading">Directions</h2>
+        <input type="text" placeholder="Directions" id="directions" name="directions" class="form-input" />
+    </div>
+
+
+</section>
+<!-- Save and Delete -->
+<section class="space-between">
+    <button class="new-recipe-button .new-recipe" id="savePost" type="button">Save</button>
+    <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
+</section>
+
+<script src="/javascript/create-recipe"
