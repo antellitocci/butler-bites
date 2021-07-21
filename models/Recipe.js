@@ -72,9 +72,14 @@ Recipe.init(
             allowNull: false
         },
         ingredients: {
-            // type: DataTypes.ARRAY(DataTypes.STRING),
-            type: DataTypes.TEXT,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: false,
+            get() {
+                return this.getDataValue('ingredients').split(',')
+            },
+            set(val){
+                this.setDataValue('ingredients',val.join(', '))
+            }
         },
         directions: {
             type: DataTypes.TEXT,
