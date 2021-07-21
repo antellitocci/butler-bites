@@ -41,7 +41,10 @@
     <!-- Save and Delete -->
     <section>
         
-        <button id="deletePost" type="button">Delete</button>
+        <button id="deleteRecipeBtn" type="button">Delete</button>
     </section>
 
+    {{#if loggedIn}}
     <script src="/javascript/edit-recipe.js"></script>
+    <script src="/javascript/delete-recipe.js"></script>
+    {{/if}}
