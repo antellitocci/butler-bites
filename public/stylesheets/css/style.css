@@ -157,6 +157,11 @@ header nav ul li a:hover {
   height: 450px;
   object-fit: cover;
 }
+
+#cakeHero {
+  object-position: 0% 35%;
+}
+
 /* End of Hero */
 /* Body Text */
 .body {
@@ -220,7 +225,10 @@ header nav ul li a:hover {
   height: 60px;
   width: 280px;
   margin-top: 50px;
-  border: solid red 3px;
+}
+
+.checked {
+  color: var(--edit-button);
 }
 #editButton {
   background-color: var(--edit-button);
@@ -254,7 +262,6 @@ header nav ul li a:hover {
   position: absolute;
   height: 60px;
   width: 280px;
-  border: solid red 3px;
   margin-left: 15px;
   margin-top: 0px;
 }
@@ -281,6 +288,7 @@ header nav ul li a:hover {
   font-size: 35px;
   font-family: LeHarve;
   padding: 10px;
+  list-style-type: none;
 }
 .recipe-sections {
   display: inline-block;
@@ -297,7 +305,57 @@ header nav ul li a:hover {
   padding: 10px;
 }
 /* Comments */
+.single-comment {
+  font-size: 30px;
+  font-family: LeHarve;
+  list-style-type: none;
+  border: solid 4px var(--black);
+  display: block;
+  margin: 10px 10px 10px 10px;
+}
+
+.single-comment h5 {
+  margin: 10px 10px 10px 10px;
+}
+
+.comment-body {
+  font-size: 40px;
+  font-family: LeHarve;
+  margin: 20px 10px 20px 10px;
+}
 /* Add a Comment */
+.add-comment {
+  display: block;
+}
+
+.add-comment h2 {
+  font-size: 40px;
+  font-family: JohnDoe;
+  margin-bottom: 20px;
+}
+
+.add-comment textarea {
+  font-size: 40px;
+  font-family: LeHarve;
+  margin: 20px 10px 20px 10px;
+  border: solid 4px var(--black);
+  background-color: var(--gray-filling);
+}
+
+.comment-button {
+  font-family: JohnDoe;
+  font-size: 35px;
+  border: solid 5px var(--black);
+  opacity: 0.75;
+  display: block;
+  margin-left: 10px;
+}
+
+.comment-button:hover {
+  opacity: 1;
+}
+/* End of RECIPE */
+
 /* Login banner */
 #loginBanner h2 {
   margin-top: 155px;
@@ -377,3 +435,39 @@ header nav ul li a:hover {
   justify-content: space-evenly;
 }
 /*End of Recipe Form */
+
+/* Login */
+.login-form {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form div {
+  display: flex;
+  margin: 40px 30px 30px 30px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-form label {
+  font-size: 40px;
+  font-family: JohnDoe;
+}
+
+.login-space {
+  margin-top: 30px;
+}
+
+.login-submit {
+  display: block;
+  background-color: var(--gray-filling);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup-link {
+  font-size: 40px;
+  font-family: LeHarve;
+}
+
+/* Signup */
