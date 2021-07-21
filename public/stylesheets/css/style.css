@@ -256,7 +256,10 @@ header nav ul li a:hover {
   height: 60px;
   width: 280px;
   margin-top: 50px;
-  border: solid red 3px;
+}
+
+.checked {
+  color: var(--edit-button);
 }
 
 #editButton {
@@ -296,7 +299,6 @@ header nav ul li a:hover {
   position: absolute;
   height: 60px;
   width: 280px;
-  border: solid red 3px;
   margin-left: 15px;
   margin-top: 0px;
 }
