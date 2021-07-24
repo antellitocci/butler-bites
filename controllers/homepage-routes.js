@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
             'cook_time',
             'serving_size',
             'ingredients',
-            'directions'
+            'directions',
+            'image'
         ],
         order: [ ['created_at', 'DESC'] ],
         include: [
@@ -66,7 +67,8 @@ router.get('/category/:id', (req, res) => {
             'cook_time',
             'serving_size',
             'ingredients',
-            'directions'
+            'directions',
+            'image'
         ],
         include: [
             {
@@ -119,7 +121,8 @@ router.get('/recipe/:id', (req, res) => {
             'serving_size',
             'ingredients',
             'directions',
-            'created_at'
+            'created_at',
+            'image'
         ],
         include: [
             {

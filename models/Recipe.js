@@ -81,6 +81,10 @@ Recipe.init(
         directions: {
             type: DataTypes.TEXT,
             allowNull: false
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },
     {

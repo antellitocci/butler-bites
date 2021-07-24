@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
             'user_id',
             'created_at',
             'prep_time',
-            'cook_time'
+            'cook_time',
+            'image'
         ],
         include: [
             {
@@ -59,7 +60,8 @@ router.get('/recipe/:id', (req, res) => {
             'cook_time',
             'serving_size',
             'ingredients',
-            'directions'
+            'directions',
+            'image'
         ],
         include: [
             {
@@ -117,7 +119,8 @@ router.get('/edit/:id', (req, res) => {
             'cook_time',
             'serving_size',
             'ingredients',
-            'directions'
+            'directions',
+            'image'
         ],
         include: [
             {
