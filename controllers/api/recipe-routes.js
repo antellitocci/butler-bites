@@ -6,14 +6,21 @@ const withAuth = require('../../utils/auth');
 var multer  = require('multer');
 var upload = multer({ dest: __dirname + '../../../uploads'});
 
+const { uploadImage, getFileStream } = require('../../s3');
 
-router.post('/', upload.single('profile-file'), function (req, res, next) {
+
+router.post('/', upload.single('profile-file'), async function (req, res, next) {
     // req.file is the `profile-file` file
     // req.body will hold the text fields, if there were any
     console.log(JSON.stringify(req.file))
     console.log(JSON.stringify(req.body));
-    let array = req.file.path.toString().split('\\');
-    let path = "/" + array[array.length - 2] + "/" + array[array.length - 1];
+
+    const file = req.file;
+    const result = await uploadImage(file);
+    let path = result.Location;
+
+    // let array = req.file.path.toString().split('\\');
+    // let path = "/" + array[array.length - 2] + "/" + array[array.length - 1];
     //S3 function .then(recipe.create)
     Recipe.create({
         title: req.body.title,
@@ -25,13 +32,15 @@ router.post('/', upload.single('profile-file'), function (req, res, next) {
         ingredients: req.body.ingredients,
         directions: req.body.directions,
         image: path
-        // image: req.body.image
     })
-    // .then(dbRecipeData => res.json(dbRecipeData))
-    // .catch(err => {
-    //     console.log(err);
-    //     res.status(500).json(err);
-    // });
+    .then(dbRecipeData => {
+        if(dbRecipeData) res.redirect('/dashboard');
+        next();
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 
