@@ -3,6 +3,9 @@ const sequelize = require('../../config/connection');
 const { Recipe, Category, User, Comment, Rating  } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
+
 // get all recipes
 router.get('/', (req, res) => {
     Recipe.findAll({
@@ -82,6 +85,7 @@ router.post('/', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
+
 
 // update recipe
 router.put('/:id', withAuth, (req, res) => {

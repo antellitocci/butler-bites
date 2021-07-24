@@ -3,6 +3,7 @@ const Recipe = require('./Recipe');
 const Rating = require('./Rating');
 const Comment = require('./Comment');
 const Category = require('./Category');
+const Image = require('./Image');
 
 //create assoications between tables
 //A user can post many recipes
@@ -69,4 +70,12 @@ Recipe.belongsTo(Category, {
     foreignKey: 'category_id'
 });
 
-module.exports = { User, Recipe, Rating, Comment, Category };
+Recipe.hasOne(Image, {
+    foreignKey: 'recipe_id'
+});
+
+Image.belongsTo(Recipe, {
+    foreignKey: 'recipe_id'
+});
+
+module.exports = { User, Recipe, Rating, Comment, Category, Image };
