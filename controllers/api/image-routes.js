@@ -13,8 +13,6 @@ router.get('/:key', (req, res) => {
 })
 
 router.post('/', withAuth, upload.single('image'), async (req, res) => {
-     
-    
     Image.create({
          id: req.params.id,
          image_key: req.params.image_key,

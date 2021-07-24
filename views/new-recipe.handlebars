@@ -1,22 +1,26 @@
 <section>
-    <form class="form-heading">
+    <form class="form-heading new-recipe-form">
         <div class="right"><label for="Title">Title</label>
             <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" />
         </div>
 
-        <div class="right">
+        {{!-- <div class="right">
             <label for="pictureLink">Recipe Picture URL</label>
             <input type="url" placeholder="URL" id="pictureLink" name="pictureLink" class="form-input" />
-        </div>
+        </div> --}}
+
+        <form action="/profile" method="post" enctype="multipart/form-data">
+            <input type="file" name="avatar" />
+        </form>
 
         <div class="right">
             <label class="form-heading" id="mealType" for="meal-type">Choose a meal type</label>
             <!-- Selection of what type of meal the user wants to categorize their recipe -->
             <select class="button form-input" name="categorize" id="categorize">
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="dessert">Dessert</option>
+                <option value="1">Breakfast</option>
+                <option value="2">Lunch</option>
+                <option value="3">Dinner</option>
+                <option value="4">Dessert</option>
             </select>
         </div>
 
@@ -51,8 +55,8 @@
 </section>
 <!-- Save and Delete -->
 <section class="space-between">
-    <button class="new-recipe-button .new-recipe" id="savePost" type="button">Save</button>
+    <button class="new-recipe-button new-recipe" id="savePost" type="button">Save</button>
     <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
 </section>
 
-<script src="/javascript/create-recipe"
+<script src="/javascript/create-recipe.js"

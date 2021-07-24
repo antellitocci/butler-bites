@@ -29,7 +29,7 @@ function uploadImage(file) {
 // downloads file from s3
 function getFileStream(fileKey) {
     const downloadParams = {
-        Key: req.params.image_key,
+        fileKey: req.params.image_key,
         Bucket: bucketName
     }
     return s3.getObject(downloadParams).createReadStream();

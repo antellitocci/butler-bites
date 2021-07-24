@@ -5,10 +5,8 @@ async function newFormHandler(event) {
     const category_id = document.querySelector('select[name="categorize"').value;
     const prep_time = document.querySelector('input[name="prepTime"]').value;
     const cook_time = document.querySelector('input[name="cookTime"]').value;
-    const serving_size = document.querySelector('input[name="servingSize"]').value;
-    const ingredients = document.querySelectorAll('.ingredients').map(element => {
-        return element.value;
-    });
+    const serving_size = document.querySelector('input[name="yieldAmt"]').value;
+    const ingredients = document.querySelector('#ingredients').value;
     const directions = document.querySelector('input[name="directions"]').value;
   
     const response = await fetch(`/api/recipes`, {
@@ -34,4 +32,4 @@ async function newFormHandler(event) {
     }
   }
   
-  document.querySelector('.newRecipeForm').addEventListener('submit', newFormHandler);
+  document.querySelector('.new-recipe').addEventListener('click', newFormHandler);

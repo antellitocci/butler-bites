@@ -4,6 +4,7 @@ module.exports = {
     },
     return_avg_rating: object => {
         let sum = 0;
+        if (object.length === 0) return 0.00;
         object.forEach(element => {
             sum += element.score;
             console.log(sum);

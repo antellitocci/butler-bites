@@ -75,23 +75,12 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
             get() {
-                return this.getDataValue('ingredients').split(',')
-            },
-            set(val){
-                this.setDataValue('ingredients',val.join(', '))
+                return this.getDataValue('ingredients').split(',');
             }
         },
         directions: {
             type: DataTypes.TEXT,
             allowNull: false
-        },
-        image_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'image',
-                key: 'id'
-            }
         }
     },
     {
