@@ -8,8 +8,8 @@ var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 
 router.get('/:key', (req, res) => {
-    const image_key = req.params.image_key;
-    const readStream = getFileStream(image_key);
+    const image = req.params.key;
+    const readStream = getFileStream(image);
 
     readStream.pipe(res);
 });
