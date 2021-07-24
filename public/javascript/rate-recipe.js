@@ -15,12 +15,14 @@ async function ratingHandler(event) {
             id
         }),
         headers: {
-            'Content-Type': 'applicable/json'
+            'Content-Type': 'application/json'
         }
     });
     if (response.ok) {
-        res.redirect(req.get('referer'));
-    };
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
 };
 
 document.querySelector('#addRating').addEventListener('click', ratingHandler);

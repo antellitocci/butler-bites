@@ -9,7 +9,7 @@ module.exports = {
             sum += element.score;
             console.log(sum);
         });
-        let average_score = parseInt(sum/object.length).toFixed(2);
+        let average_score = (sum/object.length).toFixed(2);
         return average_score;
     }
 };
