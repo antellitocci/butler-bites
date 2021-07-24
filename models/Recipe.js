@@ -85,13 +85,9 @@ Recipe.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        image_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'image',
-                key: 'id'
-            }
+        image_key: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },
     {
