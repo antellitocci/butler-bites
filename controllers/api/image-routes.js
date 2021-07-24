@@ -2,15 +2,17 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Recipe, Image } = require('../../models');
 const withAuth = require('../../utils/auth');
-const { uploadImage } = require('../../s3');
+const { uploadImage, getFileStream } = require('../../s3');
 
 var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 
 router.get('/:key', (req, res) => {
-    const image_key = req.params.key;
-    
-})
+    const image_key = req.params.image_key;
+    const readStream = getFileStream(image_key);
+
+    readStream.pipe(res);
+});
 
 router.post('/', withAuth, upload.single('image'), async (req, res) => {
     Image.create({
