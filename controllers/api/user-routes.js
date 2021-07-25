@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 const { User, Recipe, Rating, Comment } = require('../../models');
 
@@ -28,9 +27,7 @@ router.get('/:id', (req, res) => {
                 attributes: [
                     'id', 
                     'title', 
-                    'created_at',
-                    //will need to double check this actually works 
-                    //[sequelize.literal('(SELECT AVG(score) FROM rating WHERE recipe_id = recipe.id)'), 'average_rating']
+                    'created_at'
                 ]
             },
             {
@@ -45,7 +42,7 @@ router.get('/:id', (req, res) => {
                     attributes: ['title']
                 }
             }
-            // Once figured out how we are rating posts, we can re-enable this
+            // WISHLIST
             // ,
             // {
             //     model: Recipe,

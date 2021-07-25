@@ -2,11 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Recipe, User, Comment, Rating, Category, Ingredient } = require('../models');
 
-// router.get('/', (req, res) =>{
-//     res.render('homepage');
-// })
-
-
 router.get('/', (req, res) => {
     Recipe.findAll({
         attributes: [
@@ -43,7 +38,7 @@ router.get('/', (req, res) => {
         res.render('homepage', {
             recipes,
             loggedIn: req.session.loggedIn,
-            username: req.session.username //testing to see if we can display username
+            username: req.session.username
         });
     })
     .catch(err => {

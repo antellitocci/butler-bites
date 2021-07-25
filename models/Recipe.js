@@ -1,31 +1,26 @@
-// do text columns for ingredients and directions
-// I forewent an image column for the time being
-// Ingredient and direction columns are simply text fields at the moment. Ideally, these would link to any number of child tables, but for MVP we're not doing this yet.
-// Cook time will also be a simple varchar(20)
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Recipe extends Model {
-    static rate(body, models){
-        return models.Rating.create({
-            user_id: body.user_id,
-            recipe_id: body.recipe_id
-        })
-        .then(() => {
-            return Recipe.findOne({
-                where: {
-                    id: body.recipe_id
-                },
-                attributes: [
-                    'id',
-                    'title',
-                    'created at',
-                    [sequelize.literal('(SELECT AVG(score) FROM rating WHERE recipe_id = recipe.id)'), 'average_rating']
-                ]
-            });
-        });
-    }
+    // static rate(body, models){
+    //     return models.Rating.create({
+    //         user_id: body.user_id,
+    //         recipe_id: body.recipe_id
+    //     })
+    //     .then(() => {
+    //         return Recipe.findOne({
+    //             where: {
+    //                 id: body.recipe_id
+    //             },
+    //             attributes: [
+    //                 'id',
+    //                 'title',
+    //                 'created at',
+    //                 [sequelize.literal('(SELECT AVG(score) FROM rating WHERE recipe_id = recipe.id)'), 'average_rating']
+    //             ]
+    //         });
+    //     });
+    // }
 }
 
 //create columns for Recipe table
@@ -74,6 +69,7 @@ Recipe.init(
         ingredients: {
             type: DataTypes.STRING,
             allowNull: false,
+            //return the stored value as an array
             get() {
                 return this.getDataValue('ingredients').split(',');
             }

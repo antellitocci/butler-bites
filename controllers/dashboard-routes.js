@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Recipe, User, Comment, Rating, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -105,7 +104,7 @@ router.get('/recipe/:id', (req, res) => {
 });
 
 //  edit recipe
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     Recipe.findOne({
         where: {
             id: req.params.id

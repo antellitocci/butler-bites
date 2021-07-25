@@ -4,21 +4,43 @@ const { Recipe, Category, User, Comment, Rating  } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 var multer  = require('multer');
-var upload = multer({ dest: __dirname + '../../../uploads'});
+
+var upload = multer({ 
+    dest: __dirname + '../../../uploads',
+    fileFilter: (req, file, cb) => {
+        if(file.mimetype =='image/png' || file.mimetype =="image/jpg" || file.mimetype =="image/jpeg"){
+            cb(null, true);
+        }
+        else {
+            cb('Please upload only .png, .jpg, or .jpeg files! Other formats are not allowed. Click the back arrow in your browser to return to your recipe and try again.', false);
+        }
+    }
+});
 
 const { uploadImage } = require('../../s3');
 
 
-router.post('/', upload.single('profile-file'), async function (req, res, next) {
-    // req.file is the `profile-file` file
+router.post('/', upload.single('photo-file'), async function (req, res, next) {
+    // req.file is the `photo-file` file. Image to be uploaded to AWS
     // req.body will hold the text fields, if there were any
     console.log(JSON.stringify(req.file))
     console.log(JSON.stringify(req.body));
 
-    const file = req.file;
-    const result = await uploadImage(file);
-    let path = result.Location;
+    let file;
+    let result;
+    let path;
 
+    //MIGHT NOT NEED THIS HANDLING, BUT ONLY ATTEMPTS TO UPLOAD IF A FILE IS ATTACHED. SETS THE PATH TO A PLACEHOLDER IMAGE OTHERWISE
+    if(req.file !== undefined){
+        file = req.file;
+        result = await uploadImage(file);
+        path = result.Location;
+    }
+    else{
+        path = 'https://via.placeholder.com/500x500';
+    }
+
+    // THE FOLLOWING COMMENTED CODE WOULD HAVE BEEN USED IF WE WOULD HAVE STORED IMAGES DIRECTLY ON SERVER AND SERVED FROM THERE. NOT NEEDED BECAUSE WE ARE SERVING FROM AWS
     // let array = req.file.path.toString().split('\\');
     // let path = "/" + array[array.length - 2] + "/" + array[array.length - 1];
     Recipe.create({
@@ -67,7 +89,8 @@ router.get('/', (req, res) => {
     .then(dbRecipeData => res.json(dbRecipeData))
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.statusMessage = err.message;
+        res.status(500);
     });
 });
 
@@ -105,29 +128,6 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
-
-// create new recipe
-// router.post('/', upload.single('profile-file'), withAuth, (req, res, next) => {
-//     console.log(JSON.stringify(req.file));
-//     console.log(JSON.stringify(req.body));
-//     Recipe.create({
-//         title: req.body.title,
-//         user_id: req.session.user_id,
-//         category_id: req.body.category_id,
-//         prep_time: req.body.prep_time,
-//         cook_time: req.body.cook_time,
-//         serving_size: req.body.serving_size,
-//         ingredients: req.body.ingredients,
-//         directions: req.body.directions
-//         // image: req.body.image
-//     })
-//     .then(dbRecipeData => res.json(dbRecipeData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
-
 
 // update recipe
 router.put('/:id', withAuth, (req, res) => {

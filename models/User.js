@@ -42,7 +42,6 @@ User.init(
         }
     },
     {
-        //Table config options go here (https://sequelize.org/v5/manual/models-definition.html#configuration)
         hooks:{
         //setup beforeCreate lifecycle "hook" functionality
         async beforeCreate(newUserData){
@@ -55,15 +54,10 @@ User.init(
             return updatedUserData;
         }
     },
-        //pass imported sequelize connection(connection to database)
         sequelize,
-        //don't auto create createdAt/updatedAt timestamp fields
         timestamps: false,
-        //don't pluralize name of database table
         freezeTableName: true,
-        //use underscores instead of camel casing
         underscored: true,
-        //make it so model stays lowercase in database
         modelName: 'user'  
     }
 );

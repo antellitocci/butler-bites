@@ -12,7 +12,10 @@ router.post('/', withAuth, (req, res) => {
     })
     .then(dbRatingData => res.json(dbRatingData))
     .catch(err => {
-        console.log(err);
+        if(err.parent.errno === 1062){
+            res.statusMessage = 'You have already rated this recipe!';
+            res.status(500);
+        }
         res.status(500).json(err);
     });
 });
