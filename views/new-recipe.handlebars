@@ -10,7 +10,7 @@
         </div> --}}
 
 
-        <input type="file" name="profile-file"/>
+        <input type="file" name="profile-file" />
 
         <div class="right">
             <label class="form-heading" id="mealType" for="meal-type">Choose a meal type</label>
@@ -35,23 +35,24 @@
 
 
                 <label class="info-prep" for="yieldAmt">Yield (servings):</label>
-                <input type="number" placeholder="25 min" id="yieldAmt" name="yieldAmt" class="form-input" />
+                <input type="number" placeholder="5 servings" id="yieldAmt" name="yieldAmt" class="form-input" />
             </div>
 
             <div class="ingredients-form">
                 <label for="ingredients">Ingredients</label>
-                <input type="text" placeholder="Ingredients" id="ingredients" name="ingredients" class="form-input" />
+                <input type="text" placeholder="1 tsp Ingredient 1, 2 cups ingredient 2, 2 tbp ingredient 3"
+                    id="ingredients" name="ingredients" class="form-input" />
             </div>
         </div>
-            <div class="right">
-        <h2 class="form-heading">Directions</h2>
-        <input type="text" placeholder="Directions" id="directions" name="directions" class="form-input" />
-    </div>
+        <div class="right">
+            <h2 class="form-heading">Directions</h2>
+            <input type="text" placeholder="Directions" id="directions" name="directions" class="form-input" />
+        </div>
 
         <section class="space-between">
-    <button class="new-recipe-button new-recipe" id="savePost" type="submit">Save</button>
-    <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
-</section>
+            <button class="new-recipe-button new-recipe" id="savePost" type="submit">Save</button>
+            <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
+        </section>
     </form>
 
 
@@ -63,4 +64,5 @@
     <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
 </section>
 
-{{!-- <script src="/javascript/create-recipe.js"></script> --}}
+{{!--
+<script src="/javascript/create-recipe.js"></script> --}}

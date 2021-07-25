@@ -404,6 +404,8 @@ header nav ul li a:hover {
   border: solid 4px var(--black);
   display: block;
   margin: 10px 10px 10px 10px;
+  max-width: 1250px;
+  max-height: fit-content;
 }
 
 .single-comment h5 {
@@ -414,6 +416,7 @@ header nav ul li a:hover {
   font-size: 40px;
   font-family: LeHarve;
   margin: 20px 10px 20px 10px;
+  overflow-wrap: break-word;
 }
 /* Add a Comment */
 .add-comment {
@@ -430,21 +433,25 @@ header nav ul li a:hover {
   font-size: 40px;
   font-family: LeHarve;
   margin: 20px 10px 20px 10px;
-  border: solid 4px var(--black);
+  border: solid 2px var(--black);
   background-color: var(--gray-filling);
 }
 
 .comment-button {
-  font-family: JohnDoe;
+  color: white !important;
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-family: LeHarve;
+  text-align: center;
   font-size: 35px;
-  border: solid 5px var(--black);
-  opacity: 0.75;
   display: block;
   margin-left: 10px;
+  background-color: var(--breakfast-selection);
+  border-color: var(--breakfast-selection);
+  padding: 0px 10px 0px 10px;
 }
 
 .comment-button:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 /* End of RECIPE */
 
@@ -541,6 +548,25 @@ header nav ul li a:hover {
   margin: 40px 0px 40px 113px;
   justify-content: space-evenly;
 }
+
+.choice-heading {
+  font-size: 35px;
+  font-family: LeHarve;
+}
+
+.choice-button {
+  color: var(--black);
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-family: LeHarve;
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  margin-left: 55px;
+  margin-bottom: 10px;
+  background-color: var(--gray-filling);
+  border-color: #343a40;
+  padding: 0px 15px 0px 15px;
+}
 /*End of Recipe Form */
 
 /* Login */
@@ -575,6 +601,10 @@ header nav ul li a:hover {
 .signup-link {
   font-size: 40px;
   font-family: LeHarve;
+}
+
+.form-group {
+  font-family: Leharve;
 }
 
 /* Signup */
@@ -639,6 +669,7 @@ header nav ul li a:hover {
 .btn-dark {
   color: white !important;
   font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-family: LeHarve;
 }
 
 .email-helper,
@@ -648,4 +679,5 @@ header nav ul li a:hover {
 
 .login-helper {
   font-size: clamp(1.25rem, 1.5rem, 1.75rem);
+  font-family: LeHarve;
 }
