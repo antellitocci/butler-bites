@@ -3,22 +3,18 @@
 </h2>
 
 <section class="img-fluid row mb-5">
-    <img class="hero-img" id="{{ category }}Hero" src="/stylesheets/css/images/{{ category }}.jpg" alt="{{ category }} image">
+    <img class="hero-img" id="{{ category }}Hero" src="/stylesheets/css/images/{{ category }}.jpg"
+        alt="{{ category }} image">
 </section>
 
 <div class="row justify-content-center mx-2">
     {{#if recipes.length}}
-        {{#each recipes as |recipe|}}
-        <div class="card col-4 my-3 p-0 bites-card-gap">
-            {{> recipe-info recipe}}
-        </div>
-        {{/each}}
+    {{#each recipes as |recipe|}}
+    <div class="card col-4 my-3 p-0 bites-card-gap">
+        {{> recipe-info recipe}}
+    </div>
+    {{/each}}
     {{else}}
     <h3>No {{category}} recipes exist yet! You can help by <a href="/new-recipe">adding one.</a></h3>
     {{/if}}
 </div>
-
-
-
-
-
