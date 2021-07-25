@@ -1,16 +1,10 @@
 <section>
     <form class="form-heading new-recipe-form" action="/api/recipes" method="POST" enctype="multipart/form-data">
-        <div class="right"><label for="Title">Title</label>
+        <div class="right"><label for="Title" id="title">Title</label>
             <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" />
         </div>
 
-        {{!-- <div class="right">
-            <label for="pictureLink">Recipe Picture URL</label>
-            <input type="url" placeholder="URL" id="pictureLink" name="pictureLink" class="form-input" />
-        </div> --}}
-
-
-        <input type="file" name="profile-file" />
+        <input class="right file" type="file" name="profile-file" />
 
         <div class="right">
             <label class="form-heading" id="mealType" for="meal-type">Choose a meal type</label>
@@ -44,24 +38,17 @@
                     id="ingredients" name="ingredients" class="form-input" />
             </div>
         </div>
-        <div class="right">
+        <div class="right direction-block">
             <h2 class="form-heading">Directions</h2>
             <input type="text" placeholder="Directions" id="directions" name="directions" class="form-input" />
         </div>
 
         <section class="space-between">
-            <button class="new-recipe-button new-recipe" id="savePost" type="submit">Save</button>
-            <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
+            <button class="new-recipe-button btn" id="savePost" type="submit">Save</button>
+            <button class="new-recipe-button btn" id="deletePost" type="button">Delete</button>
         </section>
     </form>
 
-
-
-</section>
-<!-- Save and Delete -->
-<section class="space-between">
-    <button class="new-recipe-button new-recipe" id="savePost" type="submit">Save</button>
-    <button class="new-recipe-button" id="deletePost" type="button">Delete</button>
 </section>
 
 {{!--

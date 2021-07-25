@@ -477,26 +477,37 @@ header nav ul li a:hover {
 /* New Recipe Form */
 .form-heading {
   font-size: 40px;
-  font-family: JohnDoe;
+  font-family: LeHarve;
 }
 
 .form-input {
-  background-color: var(--gray-filling);
-  border: solid 3px var(--black);
+  border: solid 2px var(--black);
   font-size: 35px;
-  font-family: LeHavre;
-  text-align: center;
   height: 55px;
   width: 300px;
+  padding-left: 10px;
+}
+
+#categorize {
+  width: 150px;
+}
+
+#title {
+  margin-right: 20px;
 }
 
 .split {
   display: flex;
-  margin: 40px 40px 40px 400px;
+  justify-content: center;
+  margin: 40px 40px 40px 100px;
 }
 
 .right {
-  margin: 40px 40px 40px 400px;
+  justify-content: center;
+  display: flex;
+  margin-right: auto;
+  width: 80%;
+  margin: 40px 40px 40px 100px;
 }
 
 .ingredients-form {
@@ -509,13 +520,25 @@ header nav ul li a:hover {
   margin-top: 20px;
   width: 265px;
   height: 250px;
-  text-align: center;
+  /* text-align: left; */
+  padding-left: 10px;
+  overflow-wrap: break-word;
 }
 
 #directions {
   width: 750px;
   height: 300px;
   text-align: center;
+}
+
+.direction-block {
+  display: block;
+  margin-left: 22%;
+  overflow-wrap: break-word;
+}
+
+.file {
+  margin-left: 340px;
 }
 
 .prep {
@@ -533,14 +556,17 @@ header nav ul li a:hover {
 }
 
 .new-recipe-button {
-  font-family: JohnDoe;
-  font-size: 65px;
-  border: solid 5px var(--black);
-  opacity: 0.75;
+  color: white !important;
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-size: 35px;
+  display: block;
+  background-color: var(--lunch-selection);
+  border-color: var(--lunch-selection);
+  padding: 0px 10px 0px 10px;
 }
 
 .new-recipe-button:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .space-between {
