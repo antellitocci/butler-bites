@@ -7,6 +7,12 @@
   text-decoration: none;
 }
 
+a:hover i,
+a,
+i {
+  text-decoration: none !important;
+}
+
 /* Colors */
 :root {
   --login-or-signup-text: #830100;
@@ -41,6 +47,7 @@
 .top-bar {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
 }
 
 /* Search bar */
@@ -83,17 +90,33 @@ form.example::after {
   display: flex;
   justify-content: right;
 }
-.post-button {
+/* .post-button {
   font-family: LeHarve;
   font-size: 30px;
   margin-bottom: 10px;
+} */
+.login-button {
+  font-family: LeHarve;
+  font-size: 30px;
 }
-.icon {
+
+.user-icon {
+  padding: 0.5rem 0.2rem;
+}
+
+.fa-plus {
+  margin-left: 8px;
+}
+.user-corner h5 {
+  margin: 10px;
+}
+/* .icon {
   padding-left: 25px;
-}
+} */
+
 /* End of Login */
 /* Post */
-#circle {
+/* #circle {
   position: absolute;
   margin-left: 4px;
   display: inline-block;
@@ -112,7 +135,7 @@ form.example::after {
   border-right: 15px solid transparent;
 
   border-bottom: 25px solid var(--black);
-}
+} */
 /* End of Post and Login */
 
 /* Title */
@@ -178,6 +201,8 @@ header nav ul li a:hover {
   width: 80%;
   height: 450px;
   object-fit: cover;
+  margin-top: -160px;
+  margin-bottom: 30px;
 }
 
 #cakeHero {
@@ -281,12 +306,11 @@ header nav ul li a:hover {
 /* End of Recipe List */
 
 /* Recipe Banner */
-.flex-row
-{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 50px auto;
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 50px auto;
 }
 .center {
   display: flex;
@@ -537,63 +561,65 @@ header nav ul li a:hover {
 /* Signup */
 
 /*ANT - Cards / Handlebars Styles*/
-.bites-font-main{
-  font-family: 'JohnDoe';
+.bites-font-main {
+  font-family: "JohnDoe";
 }
 
-.bites-font-header{
-  font-family: 'JohnDoeBold';
+.bites-font-header {
+  font-family: "JohnDoeBold";
 }
 
-.butler-bites-header{
-  font-family: 'LeHarve';
+.butler-bites-header {
+  font-family: "LeHarve";
   font-size: clamp(1.5rem, 2rem, 2.25rem);
 }
 
-.butler-bites-title{
-  font-family: 'JohnDoeBold';
+.butler-bites-title {
+  font-family: "JohnDoeBold";
   font-size: clamp(3rem, 3.25rem, 3.5rem);
   display: flex;
 }
 
-.bites-card-gap{
+.bites-card-gap {
   margin: auto 5px auto 5px;
 }
 
-.card-body{
+.card-body {
   font-size: clamp(1.45rem, 1.55rem, 1.75rem);
 }
 
-.card-footer{
+.card-footer {
   font-size: clamp(1.25rem, 1.35rem, 1.45rem);
 }
 
-.card-title{
+.card-title {
   font-size: clamp(1.5rem, 1.75rem, 2rem);
   font-weight: bold;
 }
 
-.category-header, .ingredient-body{
+.category-header,
+.ingredient-body {
   font-size: clamp(2rem, 2.25rem, 2.5rem);
 }
 
-.ingredient-body h2{
+.ingredient-body h2 {
   font-size: clamp(2.5rem, 2.75rem, 3rem);
 }
 
-.recipe-details{
+.recipe-details {
   font-size: clamp(1.5rem, 1.75rem, 2rem) !important;
 }
 
-.btn-dark{
+.btn-dark {
   color: white !important;
   font-size: clamp(1rem, 1.25rem, 1.5rem);
 }
 
-.email-helper, .password-helper{
+.email-helper,
+.password-helper {
   font-size: clamp(1.5rem, 1.75rem, 2rem);
 }
 
-.login-helper{
+.login-helper {
   font-size: clamp(1.25rem, 1.5rem, 1.75rem);
 }
