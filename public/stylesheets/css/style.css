@@ -201,7 +201,7 @@ header nav ul li a:hover {
   width: 80%;
   height: 450px;
   object-fit: cover;
-  margin-top: -160px;
+  /* margin-top: -160px; */
   margin-bottom: 30px;
 }
 
