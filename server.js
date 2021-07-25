@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-var multer  = require('multer');
 
 require('dotenv').config();
 
@@ -15,6 +14,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
   secret: process.env.SESS_SECRET,
   cookie: {
+    // USER LOGIN EXPIRES AFTER AN HOUR
       expires: 60 * 60 * 1000
   },
   resave: false,
@@ -29,9 +29,6 @@ app.use(session(sess));
 const helpers = require('./utils/helpers');
 
 const hbs = exphbs.create({ helpers });
-
-// const hbs = exphbs.create({});
-
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

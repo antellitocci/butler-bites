@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
             'cook_time',
             'image'
         ],
+        order: [ ['created_at', 'DESC'] ],
         include: [
             {
                 model: User,

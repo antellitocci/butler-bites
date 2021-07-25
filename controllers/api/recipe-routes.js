@@ -37,7 +37,7 @@ router.post('/', upload.single('photo-file'), async function (req, res, next) {
         path = result.Location;
     }
     else{
-        path = 'https://via.placeholder.com/500x500';
+        path = '/images/recipe-placeholder.jpg';
     }
 
     // THE FOLLOWING COMMENTED CODE WOULD HAVE BEEN USED IF WE WOULD HAVE STORED IMAGES DIRECTLY ON SERVER AND SERVED FROM THERE. NOT NEEDED BECAUSE WE ARE SERVING FROM AWS
@@ -76,6 +76,7 @@ router.get('/', (req, res) => {
             'user_id',
             'image'
         ],
+        order: [ ['created_at', 'DESC'] ],
         include: [
             {
                 model: Category

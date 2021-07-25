@@ -26,7 +26,7 @@ function uploadImage(file) {
 };
 
 
-// downloads file from s3
+// downloads file from s3 || NOT CURRENTLY USED GIVEN WE ARE USING A URL METHOD TO SHOW THE IMAGES TO THE CLIENT
 function getFileStream(fileKey) {
     const downloadParams = {
         Key: fileKey,

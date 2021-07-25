@@ -65,6 +65,7 @@ router.get('/category/:id', (req, res) => {
             'directions',
             'image'
         ],
+        order: [ ['created_at', 'DESC'] ],
         include: [
             {
                 model: User,
