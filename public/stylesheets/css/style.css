@@ -271,9 +271,20 @@ header nav ul li a:hover {
 }
 
 .recipe-title {
-  /* display: block; */
   font-family: JohnDoe;
-  /* font-size: 32px; */
+  text-align: center;
+}
+
+.recipe-img {
+  max-width: 1000px;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.list {
+  font-size: 40px;
+  font-family: LeHarve;
+  padding: 10px;
 }
 
 .star-rating {
