@@ -153,7 +153,8 @@ router.get('/edit/:id', (req, res) => {
         const recipe = dbRecipeData.get({ plain: true });
         res.render('edit-recipe', {
             recipe,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            username: req.session.username
         });
     })
     .catch(err => {

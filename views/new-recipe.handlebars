@@ -1,16 +1,10 @@
 <section>
     <form class="form-heading new-recipe-form" action="/api/recipes" method="POST" enctype="multipart/form-data">
-        <div class="right"><label for="Title">Title</label>
-            <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" />
+        <div class="right">
+            <label for="Title" class="recipe-titl">Title</label>
+            <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input recipe-title" />
         </div>
-
-        {{!-- <div class="right">
-            <label for="pictureLink">Recipe Picture URL</label>
-            <input type="url" placeholder="URL" id="pictureLink" name="pictureLink" class="form-input" />
-        </div> --}}
-
-
-        <input type="file" name="profile-file"/>
+        <input type="file" name="profile-file" class="recipe-title"/>
 
         <div class="right">
             <label class="form-heading" id="mealType" for="meal-type">Choose a meal type</label>

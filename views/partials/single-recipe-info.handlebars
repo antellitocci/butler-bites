@@ -2,7 +2,7 @@
     <div class="row align-items-center justify-content-center">
         <div class="col-12 recipe-title" style="text-align: center;"><h1>{{title}}</h1></div>
         <div class="col-12 my-2" style="text-align: center;"><h5 style="font-size: clamp(1.25rem, 1.5rem, 1.75rem);">{{user.username}} on {{format_date created_at}}</h5></div>
-        <div class="col-12" style="text-align: center;"><h6 style="font-size: clamp(1rem, 1.25rem, 1.5rem);">Average Rating: {{return_avg_rating ratings}} / 5.00</h6></div>
+        <div class="col-12" style="text-align: center;"><h6 style="font-size: clamp(1rem, 1.25rem, 1.5rem);">Average Rating: {{return_avg_rating ratings}}</h6></div>
     </div>
 </div>
 
@@ -13,9 +13,9 @@
 <div class="row justify-content-between">
     <div class="prep-border col-3 ml-5">
         <ul>
-            <li>Prep: <span id="prep">{{prep_time}}</span></li>
-            <li>Cook: <span id="cook">{{cook_time}}</span></li>
-            <li>Serves: <span id="serving">{{serving_size}}</span></li>
+            <li>Prep: <span id="prep" class="body-font">{{prep_time}}</span></li>
+            <li>Cook: <span id="cook" class="body-font">{{cook_time}}</span></li>
+            <li>Serves: <span id="serving" class="body-font">{{serving_size}}</span></li>
         </ul>
     </div>
     <div class="col-6 ingredient-body">
@@ -23,7 +23,7 @@
         <h2 class="recipe-title">Ingredients</h2>
             <ul class="ml-5">
                 {{#each ingredients}}
-                    <li>{{this}}</li>
+                    <li class="body-font">{{this}}</li>
                 {{/each}}
             </ul>
         </div>
@@ -33,6 +33,6 @@
 
 
     <div class="recipe-sections row">
-        <h2>Directions</h2>
-        <p id="directions">{{directions}}</p>
+        <h2 class="recipe-title">Directions</h2>
+        <p id="directions" class="body-font">{{directions}}</p>
     </div>

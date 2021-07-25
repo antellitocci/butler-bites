@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
                     'title', 
                     'created_at',
                     //will need to double check this actually works 
-                    [sequelize.literal('(SELECT AVG(score) FROM rating WHERE recipe_id = recipe.id)'), 'average_rating']
+                    //[sequelize.literal('(SELECT AVG(score) FROM rating WHERE recipe_id = recipe.id)'), 'average_rating']
                 ]
             },
             {
@@ -86,7 +86,21 @@ router.post('/', (req, res) => {
         });
     })
     .catch(err => {
-        console.log(err);
+        // console.log(err);
+        // console.log('-------------------------------');
+        // console.log(err.parent.errno);
+        // console.log('-------------------------------');
+        // console.log(err.errors);
+        // ERRNO 1062 IS A SEQUELIZE ERROR FOR DUPLICATE ENTRY && PATH IS THE DUPLICATE FIELD (EMAIL)
+        if(err.parent.errno === 1062 && err.errors[0].path === 'user.email'){
+            res.statusMessage = 'A user with this email address already exists. Please try logging in instead.';
+            res.status(500);
+        }
+        // ERRNO 1062 IS A SEQUELIZE ERROR FOR DUPLICATE ENTRY && PATH IS THE DUPLICATE FIELD (USERNAME)
+        else if(err.parent.errno === 1062 && err.errors[0].path === 'user.username'){
+            res.statusMessage = 'A user with this username address already exists. Please choose a different username.';
+            res.status(500);  
+        }
         res.status(500).json(err);
     });
 });
@@ -101,14 +115,18 @@ router.post('/login', (req, res) => {
     })
     .then(dbUserData => {
         if(!dbUserData){
-            res.status(400).json({ message: 'No user with that email address.' });
+            res.statusMessage = 'No user with that email address. Please verify you are using the correct email address associated with your account.';
+            res.status(400).end();
+            // res.status(400).json({ message: 'No user with that email address.' });
             return;
         }
 
         // VERIFY USER
         const validPassword = dbUserData.checkPassword(req.body.password);
         if(!validPassword){
-            res.status(400).json({ message: 'Incorrect password.' });
+            res.statusMessage = 'Incorrect password. Please re-enter your password and try again.';
+            res.status(400).end();
+            // res.status(400).send('Incorrect password.');
             return;
         }
 

@@ -248,6 +248,7 @@ header nav ul li a:hover {
 .recipe-title {
   /* display: block; */
   font-family: JohnDoe;
+  font-size: 2rem !important;
   /* font-size: 32px; */
 }
 
@@ -433,11 +434,9 @@ header nav ul li a:hover {
 .form-input {
   background-color: var(--gray-filling);
   border: solid 3px var(--black);
-  font-size: 35px;
+  font-size: 1rem !important; 
   font-family: LeHavre;
   text-align: center;
-  height: 55px;
-  width: 300px;
 }
 
 .split {
@@ -596,4 +595,12 @@ header nav ul li a:hover {
 
 .login-helper{
   font-size: clamp(1.25rem, 1.5rem, 1.75rem);
+}
+
+.body-font{
+  font-size: 1.75rem !important;
+}
+
+h3{
+  font-size: 1.5rem !important;
 }

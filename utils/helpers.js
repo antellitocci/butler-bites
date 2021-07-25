@@ -4,12 +4,12 @@ module.exports = {
     },
     return_avg_rating: object => {
         let sum = 0;
-        if (object.length === 0) return 0.00;
+        if (object.length === 0) return 'Not Rated';
         object.forEach(element => {
             sum += element.score;
             console.log(sum);
         });
-        let average_score = (sum/object.length).toFixed(2);
+        let average_score = (sum/object.length).toFixed(2) + " / 5.00";
         return average_score;
     }
 };

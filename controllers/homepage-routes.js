@@ -156,7 +156,8 @@ router.get('/recipe/:id', (req, res) => {
         console.log(recipe);
         res.render('single-recipe', {
             recipe,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            username: req.session.username
         });
     })
     .catch(err => {
