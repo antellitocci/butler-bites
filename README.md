@@ -15,15 +15,43 @@ Butler Bites is a community website designed to allow users to post recipes and 
 
 <img alt="MySQL" src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white"/>
 
+<img alt="Heroku" src="https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white"/>
+
 <img alt="sequelize.js" src="https://img.shields.io/badge/Sequelize-.js-blue"/>
+
 <img alt="dotenv" src="https://img.shields.io/badge/dotenv-%20-green"/>
+
+### New Technologies
+
+<img alt="AWS" src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white"/>
+
+AWS was used to host our user-uploaded recipe photos.
+
+<img alt="multer" src="https://img.shields.io/badge/Multer-.js-red"/>
+
+Multer was used to take user files and then pass them to AWS for upload.
+
 
 ## Table of Contents
 
+* [Screenshots](#screenshots)
 * [Usage](#usage)
 * [Known Flaws](#known-flaws)
 * [Future Development](#future-development)
 * [License](#license)
+
+## Screenshots
+
+### Homepage
+<img src="./public/images/butler-bites-home.png" alt="home" />
+
+### Dashboard Page
+<img src="./public/images/butler-bites-dashboard.png" alt="dashboard" />
+
+### Recipe Category Page
+<img src="./public/images/butler-bites-category.png" alt="dashboard" />
+
+
 
 ## Usage
 
@@ -35,11 +63,14 @@ To use the platform please visit [https://butler-bites.herokuapp.com/](https://b
 * No edit / delete comment features
 * No search capabilities
 * When adding a new recipe:
-  
   * Ingredients must be comma separated or the display is wrong.
   * Input boxes could allow for more customization in regard to timing mechanisms (e.g., minutes, hours, etc.) and yield adjectives (e.g., yields 2 servings or feeds 3 people)
   * No word-wrap in the directions input box
   * Error handling of incorrect image type uploads could be cleaner
+
+* When editing a recipe:
+  * Aside from the title form, a user must re-input all of the other information about the recipe.
+  * Cannot update the recipe photo
 
 * The ability to rate a recipe does not go away when a user has already rated a recipe. There is an error catch should they try to rate a previously rated recipe, but a more elegant solution is needed.
 
@@ -50,6 +81,9 @@ To use the platform please visit [https://butler-bites.herokuapp.com/](https://b
 * Implement search bar functionality
 * Implement filters on respective recipe pages. Examples include by date added and by rating.
 * Implement a more robust error handling mechanism. Essentially element browser alerts for a more refined notice.
+* Add user profile pages so users can view each other's recipes without having to search or filter for that specific user
+* Add ability for user's to save their favorite recipes
+* Add integration to allow users to share recipes directly to Facebook
 
 ## License
         
