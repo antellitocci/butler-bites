@@ -3,7 +3,7 @@
       
 ## Description
 
-A fully functional web application that allows users to login / register to begin sharing recipes with other users. Users are also able to comment on and rate their peers' recipes.
+Butler Bites is a community website designed to allow users to post recipes and interact with other users' recipes by rating or commenting on them.
 
 ## Built With
     
@@ -21,10 +21,11 @@ A fully functional web application that allows users to login / register to begi
 ## Table of Contents
 
 * [Usage](#usage)
-* [Questions](#questions)
 * [License](#license)
 
-## Questions
+## Usage
+
+To use the platform please visit [https://butler-bites.herokuapp.com/](https://butler-bites.herokuapp.com/)
 
 ## License
         
