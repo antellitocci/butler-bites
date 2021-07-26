@@ -21,11 +21,20 @@ Butler Bites is a community website designed to allow users to post recipes and 
 ## Table of Contents
 
 * [Usage](#usage)
+* [Known Flaws](#known-flaws)
+* [Future Development](#future-development)
 * [License](#license)
 
 ## Usage
 
 To use the platform please visit [https://butler-bites.herokuapp.com/](https://butler-bites.herokuapp.com/)
+
+## Known Flaws
+
+*
+*
+
+## Future Development
 
 ## License
         
