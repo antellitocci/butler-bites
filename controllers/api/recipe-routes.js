@@ -168,17 +168,37 @@ router.put('/:id', withAuth, (req, res) => {
 
 // delete recipe
 router.delete('/:id', withAuth, (req, res) => {
-    Recipe.destroy({
+    //HAVE TO DELETE COMMENTS ON RECIPE FIRST OR WE GET AN ERROR
+    Comment.findAll({
         where: {
-            id: req.params.id
+            recipe_id: req.params.id
         }
     })
-    .then(dbRecipeData => {
-        if (!dbRecipeData) {
-            res.status(404).json({ message: 'No recipe with that id found' });
-            return;
+    .then(dbCommentData => {
+        if(!dbCommentData){
+            next();
         }
-        res.json(dbRecipeData);
+        dbCommentData.forEach(element => {
+            Comment.destroy({
+                where: {
+                    id: element.id
+                }
+            });
+        });
+    })
+    .then(dbCommentData => {
+        Recipe.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(dbRecipeData => {
+            if (!dbRecipeData) {
+                res.status(404).json({ message: 'No recipe with that id found' });
+                return;
+            }
+            res.json(dbRecipeData);
+        });
     })
     .catch(err => {
         console.log(err);
