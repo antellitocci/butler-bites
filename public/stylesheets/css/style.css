@@ -529,6 +529,7 @@ header nav ul li a:hover {
   width: 750px;
   height: 300px;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .direction-block {
@@ -709,3 +710,55 @@ header nav ul li a:hover {
 }
 
 /* MEDIA QUERIES */
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+  /* Single recipe page */
+  .single-comment {
+    max-width: 820px;
+  }
+  .recipe-img {
+    max-width: 800px;
+    max-height: 500px;
+    object-fit: cover;
+  }
+}
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+  /* Single recipe page */
+  .single-comment {
+    max-width: 560px;
+  }
+  .recipe-img {
+    max-width: 800px;
+    max-height: 500px;
+    object-fit: cover;
+  }
+  .prep-border {
+    height: 375px;
+  }
+
+  #directions {
+    width: 550px;
+  }
+
+  /* New recipe page */
+  .right {
+    margin: 20px 20px 20px 10px;
+  }
+
+  .file {
+    margin-left: 0px;
+  }
+
+  .split {
+    margin: 0px;
+  }
+
+  .direction-block {
+    margin-left: 0px;
+  }
+
+  .space-between {
+    margin: 0px;
+  }
+}
