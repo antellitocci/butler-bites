@@ -7,6 +7,12 @@
   text-decoration: none;
 }
 
+a:hover i,
+a,
+i {
+  text-decoration: none !important;
+}
+
 /* Colors */
 :root {
   --login-or-signup-text: #830100;
@@ -41,6 +47,7 @@
 .top-bar {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
 }
 
 /* Search bar */
@@ -83,17 +90,33 @@ form.example::after {
   display: flex;
   justify-content: right;
 }
-.post-button {
+/* .post-button {
   font-family: LeHarve;
   font-size: 30px;
   margin-bottom: 10px;
+} */
+.login-button {
+  font-family: LeHarve;
+  font-size: 30px;
 }
-.icon {
+
+.user-icon {
+  padding: 0.5rem 0.2rem;
+}
+
+.fa-plus {
+  margin-left: 8px;
+}
+.user-corner h5 {
+  margin: 10px;
+}
+/* .icon {
   padding-left: 25px;
-}
+} */
+
 /* End of Login */
 /* Post */
-#circle {
+/* #circle {
   position: absolute;
   margin-left: 4px;
   display: inline-block;
@@ -112,7 +135,7 @@ form.example::after {
   border-right: 15px solid transparent;
 
   border-bottom: 25px solid var(--black);
-}
+} */
 /* End of Post and Login */
 
 /* Title */
@@ -178,6 +201,8 @@ header nav ul li a:hover {
   width: 80%;
   height: 450px;
   object-fit: cover;
+  /* margin-top: -160px; */
+  margin-bottom: 30px;
 }
 
 #cakeHero {
@@ -246,10 +271,30 @@ header nav ul li a:hover {
 }
 
 .recipe-title {
-  /* display: block; */
   font-family: JohnDoe;
   font-size: 2rem !important;
   /* font-size: 32px; */
+  text-align: center;
+}
+
+.recipe-img {
+  max-width: 1000px;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.list {
+  font-size: 40px;
+  font-family: LeHarve;
+  padding: 10px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
 }
 
 .star-rating {
@@ -282,12 +327,11 @@ header nav ul li a:hover {
 /* End of Recipe List */
 
 /* Recipe Banner */
-.flex-row
-{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 50px auto;
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 50px auto;
 }
 .center {
   display: flex;
@@ -362,6 +406,8 @@ header nav ul li a:hover {
   border: solid 4px var(--black);
   display: block;
   margin: 10px 10px 10px 10px;
+  max-width: 1250px;
+  max-height: fit-content;
 }
 
 .single-comment h5 {
@@ -372,6 +418,7 @@ header nav ul li a:hover {
   font-size: 40px;
   font-family: LeHarve;
   margin: 20px 10px 20px 10px;
+  overflow-wrap: break-word;
 }
 /* Add a Comment */
 .add-comment {
@@ -388,21 +435,25 @@ header nav ul li a:hover {
   font-size: 40px;
   font-family: LeHarve;
   margin: 20px 10px 20px 10px;
-  border: solid 4px var(--black);
+  border: solid 2px var(--black);
   background-color: var(--gray-filling);
 }
 
 .comment-button {
-  font-family: JohnDoe;
+  color: white !important;
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-family: LeHarve;
+  text-align: center;
   font-size: 35px;
-  border: solid 5px var(--black);
-  opacity: 0.75;
   display: block;
   margin-left: 10px;
+  background-color: var(--breakfast-selection);
+  border-color: var(--breakfast-selection);
+  padding: 0px 10px 0px 10px;
 }
 
 .comment-button:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 /* End of RECIPE */
 
@@ -428,7 +479,7 @@ header nav ul li a:hover {
 /* New Recipe Form */
 .form-heading {
   font-size: 40px;
-  font-family: JohnDoe;
+  font-family: LeHarve;
 }
 
 .form-input {
@@ -437,15 +488,33 @@ header nav ul li a:hover {
   font-size: 1rem !important; 
   font-family: LeHavre;
   text-align: center;
+  border: solid 2px var(--black);
+  font-size: 35px;
+  height: 55px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+#categorize {
+  width: 150px;
+}
+
+#title {
+  margin-right: 20px;
 }
 
 .split {
   display: flex;
-  margin: 40px 40px 40px 400px;
+  justify-content: center;
+  margin: 40px 40px 40px 100px;
 }
 
 .right {
-  margin: 40px 40px 40px 400px;
+  justify-content: center;
+  display: flex;
+  margin-right: auto;
+  width: 80%;
+  margin: 40px 40px 40px 100px;
 }
 
 .ingredients-form {
@@ -458,13 +527,25 @@ header nav ul li a:hover {
   margin-top: 20px;
   width: 265px;
   height: 250px;
-  text-align: center;
+  /* text-align: left; */
+  padding-left: 10px;
+  overflow-wrap: break-word;
 }
 
 #directions {
   width: 750px;
   height: 300px;
   text-align: center;
+}
+
+.direction-block {
+  display: block;
+  margin-left: 22%;
+  overflow-wrap: break-word;
+}
+
+.file {
+  margin-left: 340px;
 }
 
 .prep {
@@ -482,20 +563,42 @@ header nav ul li a:hover {
 }
 
 .new-recipe-button {
-  font-family: JohnDoe;
-  font-size: 65px;
-  border: solid 5px var(--black);
-  opacity: 0.75;
+  color: white !important;
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-size: 35px;
+  display: block;
+  background-color: var(--lunch-selection);
+  border-color: var(--lunch-selection);
+  padding: 0px 10px 0px 10px;
 }
 
 .new-recipe-button:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .space-between {
   display: flex;
   margin: 40px 0px 40px 113px;
   justify-content: space-evenly;
+}
+
+.choice-heading {
+  font-size: 35px;
+  font-family: LeHarve;
+}
+
+.choice-button {
+  color: var(--black);
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-family: LeHarve;
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  margin-left: 55px;
+  margin-bottom: 10px;
+  background-color: var(--gray-filling);
+  border-color: #343a40;
+  padding: 0px 15px 0px 15px;
 }
 /*End of Recipe Form */
 
@@ -533,67 +636,81 @@ header nav ul li a:hover {
   font-family: LeHarve;
 }
 
+.form-group {
+  font-family: Leharve;
+}
+
 /* Signup */
 
 /*ANT - Cards / Handlebars Styles*/
-.bites-font-main{
-  font-family: 'JohnDoe';
+.bites-font-main {
+  font-family: "JohnDoe";
 }
 
-.bites-font-header{
-  font-family: 'JohnDoeBold';
+.bites-font-header {
+  font-family: "JohnDoeBold";
 }
 
-.butler-bites-header{
-  font-family: 'LeHarve';
+.butler-bites-header {
+  font-family: "LeHarve";
   font-size: clamp(1.5rem, 2rem, 2.25rem);
 }
 
-.butler-bites-title{
-  font-family: 'JohnDoeBold';
+.butler-bites-title {
+  font-family: "JohnDoeBold";
   font-size: clamp(3rem, 3.25rem, 3.5rem);
   display: flex;
 }
 
-.bites-card-gap{
+.bites-card-gap {
   margin: auto 5px auto 5px;
 }
 
-.card-body{
+.card-body {
   font-size: clamp(1.45rem, 1.55rem, 1.75rem);
 }
 
-.card-footer{
+.card-footer {
   font-size: clamp(1.25rem, 1.35rem, 1.45rem);
+  font-family: LeHarve;
 }
 
-.card-title{
+.card-title {
   font-size: clamp(1.5rem, 1.75rem, 2rem);
   font-weight: bold;
 }
 
-.category-header, .ingredient-body{
-  font-size: clamp(2rem, 2.25rem, 2.5rem);
+.card-text {
+  font-family: LeHarve;
+  font-size: 30px;
 }
 
-.ingredient-body h2{
+.category-header,
+.ingredient-body {
+  font-size: clamp(2rem, 2.25rem, 2.5rem);
+  font-family: LeHarve;
+}
+
+.ingredient-body h2 {
   font-size: clamp(2.5rem, 2.75rem, 3rem);
 }
 
-.recipe-details{
+.recipe-details {
   font-size: clamp(1.5rem, 1.75rem, 2rem) !important;
 }
 
-.btn-dark{
+.btn-dark {
   color: white !important;
   font-size: clamp(1rem, 1.25rem, 1.5rem);
+  font-family: LeHarve;
 }
 
-.email-helper, .password-helper{
+.email-helper,
+.password-helper {
   font-size: clamp(1.5rem, 1.75rem, 2rem);
 }
 
-.login-helper{
+.login-helper {
   font-size: clamp(1.25rem, 1.5rem, 1.75rem);
 }
 
@@ -604,3 +721,4 @@ header nav ul li a:hover {
 h3{
   font-size: 1.5rem !important;
 }
+/* MEDIA QUERIES */

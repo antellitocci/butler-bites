@@ -5,8 +5,6 @@
 
 A fully functional web application that allows users to login / register to begin sharing recipes with other users. Users are also able to comment on and rate their peers' recipes.
 
-GO BACK AND CHANGE API TO USE USER SESSIONS VS USER ID (IN BODY)
-
 ## Built With
     
 <img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>

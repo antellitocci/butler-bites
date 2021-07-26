@@ -3,11 +3,24 @@
         <div class="col-12 recipe-title" style="text-align: center;"><h1>{{title}}</h1></div>
         <div class="col-12 my-2" style="text-align: center;"><h5 style="font-size: clamp(1.25rem, 1.5rem, 1.75rem);">{{user.username}} on {{format_date created_at}}</h5></div>
         <div class="col-12" style="text-align: center;"><h6 style="font-size: clamp(1rem, 1.25rem, 1.5rem);">Average Rating: {{return_avg_rating ratings}}</h6></div>
+        <div class="col-12 recipe-title">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-12 my-2" style="text-align: center;">
+            <h5 style="font-size: clamp(1rem, 1.25rem, 1.5rem);font-family: LeHarve; font-size: 25px;">{{user.username}}
+                on {{format_date
+                created_at}}</h5>
+        </div>
+        <div class="col-12" style="text-align: center;">
+            <h6 style="font-size: clamp(1rem, 1.25rem, 1.5rem);font-family: LeHarve; font-size: 25px;">Average Rating:
+                {{return_avg_rating ratings}} / 5.00
+            </h6>
+        </div>
     </div>
 </div>
 
 <div class="row justify-content-center my-5">
-    <img src="{{image}}" alt="{{title}} photo" style="max-width: 1000px; max-height: auto;">
+    <img class="recipe-img" src="{{image}}" alt="{{title}} photo">
 </div>
 
 <div class="row justify-content-between">
@@ -20,10 +33,14 @@
     </div>
     <div class="col-6 ingredient-body">
         <div>
-        <h2 class="recipe-title">Ingredients</h2>
-            <ul class="ml-5">
+            <h2 class="recipe-title">Ingredients</h2>
+            <ul class="ml-5 list">
                 {{#each ingredients}}
+<<<<<<< HEAD
                     <li class="body-font">{{this}}</li>
+=======
+                <li>{{this}}</li>
+>>>>>>> c54492024bfc61563f64c5ce712a1791a5574e6f
                 {{/each}}
             </ul>
         </div>
@@ -32,7 +49,14 @@
 </div>
 
 
+<<<<<<< HEAD
     <div class="recipe-sections row">
         <h2 class="recipe-title">Directions</h2>
         <p id="directions" class="body-font">{{directions}}</p>
     </div>
+=======
+<div class="recipe-sections row">
+    <h2>Directions</h2>
+    <p id="directions">{{directions}}</p>
+</div>
+>>>>>>> c54492024bfc61563f64c5ce712a1791a5574e6f

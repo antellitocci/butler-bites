@@ -6,31 +6,20 @@
 <div class="add-comment">
     <h2 class="recipe-title">Add a Comment:</h2>
     <textarea name="new-comment" id="newComment" cols="30" row="10"></textarea>
-    <button class="comment-button" id="add-comment" type="button">Post</button>
+    <button class="comment-button btn" id="add-comment" type="button">Post</button>
 </div>
 <div>
-    <label class="form-heading" id="ratingScore" for="rating">What would you rate this recipe out of 5?</label>
-    <select class="button form-input" name="rating" id="rating-score">
+    <label class="choice-heading" id="ratingScore" for="rating">What would you rate this recipe out of 5?</label>
+    <select class="btn choice-button" name="rating" id="rating-score">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
     </select>
-    <button id="addRating">give score</button>
+    <button class="btn comment-button" id="addRating">Submit Rating</button>
 </div>
 
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/rate-recipe.js"></script>
 {{/if}}
-
-
-
-
-
-
-
-
-
-
-
