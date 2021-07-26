@@ -36,4 +36,4 @@ async function editFormHandler(event) {
     }
   }
   
-  document.querySelector('.new-recipe-form').addEventListener('submit', editFormHandler);
+  document.querySelector('#save-recipe').addEventListener('click', editFormHandler);

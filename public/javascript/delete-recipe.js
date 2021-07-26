@@ -15,4 +15,4 @@ async function deleteFormHandler(event) {
     }
   }
   
-  document.querySelector('.new-recipe-form').addEventListener('submit', deleteFormHandler);
+  document.querySelector('#delete-recipe').addEventListener('click', deleteFormHandler);
