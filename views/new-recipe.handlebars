@@ -1,13 +1,15 @@
 <section>
-    <form class="form-heading new-recipe-form" action="/api/recipes" method="POST" enctype="multipart/form-data">
+    <form class="form-heading new-recipe-form"  action="/api/recipes" method="POST" enctype="multipart/form-data">
         <div class="right"><label for="Title" id="title">Title</label>
-            <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" />
+            <input type="text" placeholder="Your Title" id="titleRecipe" name="title" class="form-input" required />
         </div>
-
-        <input class="right file" type="file" name="photo-file" />
+    <div class="right file">
+        <label for="photo-file" class="form-heading">Upload a photo</label>
+        <input type="file" name="photo-file" style="font-size: smaller; margin-left: 50px;"/>
+    </div>
 
         <div class="right">
-            <label class="form-heading" id="mealType" for="meal-type">Choose a meal type</label>
+            <label class="form-heading" id="mealType" for="meal-type" style="margin-right: 20px;">Choose a meal type</label>
             <!-- Selection of what type of meal the user wants to categorize their recipe -->
             <select class="button form-input" name="categorize" id="categorize">
                 <option value="1">Breakfast</option>
@@ -21,35 +23,34 @@
         <div class="split">
             <div class="prep">
                 <label class="info-prep" for="prepTime">Prep (min):</label>
-                <input type="number" placeholder="10 min" id="prepTime" name="prepTime" class="form-input" />
+                <input type="number" placeholder="10 min" id="prepTime" name="prepTime" class="form-input" required />
 
 
                 <label class="info-prep" for="cookTime">Cook (min):</label>
-                <input type="number" placeholder="15 min" id="cookTime" name="cookTime" class="form-input" />
+                <input type="number" placeholder="15 min" id="cookTime" name="cookTime" class="form-input" required />
 
 
                 <label class="info-prep" for="yieldAmt">Yield (servings):</label>
-                <input type="number" placeholder="5 servings" id="yieldAmt" name="yieldAmt" class="form-input" />
+                <input type="number" placeholder="5 servings" id="yieldAmt" name="yieldAmt" class="form-input" required />
             </div>
 
             <div class="ingredients-form">
                 <label for="ingredients">Ingredients</label>
-                <input type="text" placeholder="1 tsp Ingredient 1, 2 cups ingredient 2, 2 tbp ingredient 3"
-                    id="ingredients" name="ingredients" class="form-input" />
+                <input type="text" placeholder="1 tsp Ingredient 1, 2 cups ingredient 2"
+                    id="ingredients" name="ingredients" class="form-input" required/>
             </div>
         </div>
         <div class="right direction-block">
             <h2 class="form-heading">Directions</h2>
-            <input type="text" placeholder="Directions" id="directions" name="directions" class="form-input" />
+            <input type="text" placeholder="Directions" id="directions" name="directions" class="form-input" required />
         </div>
 
         <section class="space-between">
-            <button class="new-recipe-button btn" id="savePost" type="submit">Save</button>
-            <button class="new-recipe-button btn" id="deletePost" type="button">Delete</button>
+            <button class="new-recipe-button btn" id="create" type="submit">Create</button>
         </section>
     </form>
 
 </section>
 
-{{!--
-<script src="/javascript/create-recipe.js"></script> --}}
+
+{{!-- <script src="/javascript/create-recipe.js"></script> --}}

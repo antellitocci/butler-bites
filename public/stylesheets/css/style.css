@@ -545,7 +545,9 @@ header nav ul li a:hover {
 }
 
 .file {
-  margin-left: 340px;
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
 }
 
 .prep {

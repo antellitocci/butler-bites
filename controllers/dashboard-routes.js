@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'id']
             },
             {
                 model: Rating,
@@ -74,7 +74,7 @@ router.get('/recipe/:id', (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'id']
             },
             {
                 model: Rating,
@@ -105,7 +105,7 @@ router.get('/recipe/:id', (req, res) => {
 });
 
 //  edit recipe
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit-recipe/:id', withAuth, (req, res) => {
     Recipe.findOne({
         where: {
             id: req.params.id
@@ -133,7 +133,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'id']
             },
             {
                 model: Rating,

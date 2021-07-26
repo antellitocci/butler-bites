@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'id']
             },
             {
                 model: Rating,
@@ -69,7 +69,7 @@ router.get('/category/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'id']
             },
             {
                 model: Rating,
@@ -126,7 +126,7 @@ router.get('/recipe/:id', (req, res) => {
                 attributes: ['id', 'comment_text', 'recipe_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'id']
                 }
             },
             {

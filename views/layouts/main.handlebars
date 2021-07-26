@@ -14,37 +14,10 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
 </head>
-<<<<<<< HEAD
-<body class="bg-light" style="font-family: 'LeHarve';">
-    <div class="fixed-top bg-light mb-5">
-    <nav class="navbar navbar-expand-lg butler-bites-header justify-content-end pb-0" style="margin-bottom: -2%;">
-      <div class="navbar">
-          <div class="navbar-nav">
-              {{#if loggedIn}}
-              <h5><a class="nav-link" data-toggle="tooltip" title="Add Recipe" href="/new-recipe"><i class="fal fa-plus"></i></a></h5>
-              <h5 class="align-items-center" ><a class="nav-link align-items-center" href='/dashboard' title="Visit Dashboard" data-toggle="tooltip">{{username}}</a></h5>
-              <button id="logout" class="btn bg-transparent logout" data-toggle="tooltip" title="Logout"><h5><i class="far fa-sign-out"></i></h5></button>
-              {{else}}
-              <a class="nav-link" href="/login">Login / Register</a>
-              {{/if}}
-          </div>
-      </div>
-    </nav>
-    <div class="container mt-0">
-        <a class="navbar-brand butler-bites-title justify-content-center" href="/">Butler Bites</a>
-    </div>
-    <div class="container my-4">
-      <div class="row justify-content-between mx-5">
-          <h2 class="bites-font-header"><a href="/category/1">Breakfast</a></h2>
-          <h2 class="bites-font-header"><a href="/category/2">Lunch</a></h2>
-          <h2 class="bites-font-header"><a href="/category/3">Dinner</a></h2>
-          <h2 class="bites-font-header"><a href="/category/4">Dessert</a></h2>
-=======
-
 <body>
   <header>
     <div class="top-bar">
-      <form class="example" action="/action_page.php" style="max-width:300px">
+      <form class="example" action="#" style="max-width:300px">
         <input type="text" placeholder="Search.." name="search2">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
@@ -53,13 +26,12 @@
       <div class="user-corner">
         <a class="user-icon" data-toggle="tooltip" title="Add Recipe" href="/new-recipe"><i class="fal fa-plus"></i>
           <a class="user-icon" href="/dashboard"><i class="fal fa-user"></i></a>
-          <h5>Welcome, {{username}}</h5>
+          <h5>Welcome, <a href="/dashboard">{{username}}</a></h5>
           <button id="logout" class="btn bg-transparent logout"><span>Logout<i
                 class="far fa-sign-out"></i></span></button>
           {{else}}
           <a class="login-button" href="/login">Login / Register</a>
           {{/if}}
->>>>>>> c54492024bfc61563f64c5ce712a1791a5574e6f
       </div>
     </div>
 

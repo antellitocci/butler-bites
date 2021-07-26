@@ -7,12 +7,10 @@
     {{#each recipes as |recipe|}}
     <div class="card col-4 my-3 p-0 bites-card-gap">
         {{> recipe-info recipe}}
-        <button id="editButton"> <a href="/edit-recipe">Edit</a></button>
+        <button id="editButton" syle="position: relative; top: 0; left: 0;"><a href="/dashboard/edit-recipe/{{id}}">Edit</a></button>
     </div>
     {{/each}}
     {{else}}
     <h3>You haven't created any recipes yet! You can <b><a href="/new-recipe">add one</a></b> if you'd like!</h3>
     {{/if}}
 </div>
-
-<script src="/javascript/edit-recipe.js"></script>

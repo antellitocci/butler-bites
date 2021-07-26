@@ -59,7 +59,11 @@ router.post('/', upload.single('photo-file'), async function (req, res, next) {
         next();
     })
     .catch(err => {
-        console.log(err);
+        //console.log(err.errors[0].type);
+        // if(err.errors[0].type === 'Validation error'){
+        //     res.statusMessage = 'Please be sure to fill in all text fields and try again.'
+        //     res.status(500);
+        // }
         res.status(500).json(err);
     });
 });
@@ -130,7 +134,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// update recipe
+// update recipe | EDIT A RECIPE
 router.put('/:id', withAuth, (req, res) => {
     Recipe.update(
         {
