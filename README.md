@@ -31,10 +31,25 @@ To use the platform please visit [https://butler-bites.herokuapp.com/](https://b
 
 ## Known Flaws
 
-*
-*
+* Responsiveness
+* No edit / delete comment features
+* No search capabilities
+* When adding a new recipe:
+  
+  * Ingredients must be comma separated or the display is wrong.
+  * Input boxes could allow for more customization in regard to timing mechanisms (e.g., minutes, hours, etc.) and yield adjectives (e.g., yields 2 servings or feeds 3 people)
+  * No word-wrap in the directions input box
+  * Error handling of incorrect image type uploads could be cleaner
+
+* The ability to rate a recipe does not go away when a user has already rated a recipe. There is an error catch should they try to rate a previously rated recipe, but a more elegant solution is needed.
 
 ## Future Development
+
+* Continued UI / UX refinements to improve responsiveness and overall structure
+* Add ability for users to edit / delete their comments
+* Implement search bar functionality
+* Implement filters on respective recipe pages. Examples include by date added and by rating.
+* Implement a more robust error handling mechanism. Essentially element browser alerts for a more refined notice.
 
 ## License
         
